@@ -1,0 +1,33 @@
+:root {
+  --bg-primary: #07080A;
+  --bg-surface: #0F1217;
+  --bg-elevated: #161B22;
+  --bg-terminal: #050608;
+  --text-primary: #F3F4F6;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --accent-red: #E5484D;
+  --accent-red-hover: #F2555A;
+  --accent-red-soft: rgba(229, 72, 77, 0.14);
+  --cad-blue: #3B82F6;
+  --cad-blue-soft: rgba(59, 130, 246, 0.12);
+  --status-success: #2EAD6B;
+  --status-success-soft: rgba(46, 173, 107, 0.14);
+  --status-warning: #F59E0B;
+  --status-warning-soft: rgba(245, 158, 11, 0.14);
+  --status-info: #3B82F6;
+  --status-info-soft: rgba(59, 130, 246, 0.14);
+  --status-purple: #A855F7;
+  --status-purple-soft: rgba(168, 85, 247, 0.14);
+  --border-subtle: #1F2530;
+  --border-focus: #E5484D;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --max-width: 1240px;
+  --header-height: 64px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --transition-fast: 160ms ease;
+}

@@ -1,0 +1,201 @@
+{
+  "lang": "en",
+  "brand": "VICTOR.EXE",
+  "name": "Victor Eduardo",
+  "fullName": "Victor Eduardo Almeida dos Santos",
+  "title": "Computer Engineering Student | Backend & Software Engineering",
+  "institution": "Federal University of Goiás (UFG)",
+  "degree": "B.Sc. in Computer Engineering (3rd semester in progress)",
+  "period": "August/2025 – December/2030 (expected)",
+  "location": "Aparecida de Goiânia — GO, Brazil",
+  "goal": "Software Engineering Internship Opportunity",
+  "availability": "Available up to 6 hours per day",
+  "availabilityBadge": "Available for Internship (up to 6h/day)",
+  "profileImage": "./public/images/profile.webp",
+  "profileImageAlt": "Victor Eduardo profile photo",
+  "summary": "3rd-semester Computer Engineering student at UFG building personal projects in backend development (Java & Spring Boot), native Android apps (Kotlin & Jetpack Compose), and Python tooling. My repositories cover REST APIs, relational data modeling, IMAP integration, simulated telemetry, and cloud deployment. Seeking a Software Engineering internship to apply this practical foundation to production code and learn with a team.",
+  "transparencyPrinciple": "Core principle: demonstrate competence with transparency. Planned features are never presented as completed, nor are browser simulations presented as live production services.",
+  "contacts": {
+    "email": "victoreduardo.alm@gmail.com",
+    "github": "https://github.com/VictorEduardo-coder",
+    "linkedin": "https://www.linkedin.com/in/victoreduardo-coder/",
+    "privacyNote": "For privacy reasons, residential address and phone number are not disclosed on the website or in the public PDF resume. The primary contact channel is victoreduardo.alm@gmail.com."
+  },
+  "resume": {
+    "available": true,
+    "fileUrl": "./public/documents/resume.pdf",
+    "downloadName": "Resume-Victor-Eduardo.pdf",
+    "viewLabel": "View Resume",
+    "downloadLabel": "Download Resume (PDF)"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "techLab": "Tech Lab",
+    "engineering": "Engineering",
+    "github": "GitHub",
+    "contact": "Contact",
+    "langSwitch": "PT"
+  },
+  "hero": {
+    "ctaProjects": "Explore Projects",
+    "ctaTechLab": "Launch Tech Lab",
+    "ctaContact": "Get in Touch",
+    "ctaResume": "View Resume",
+    "ctaResumeDownload": "Download PDF",
+    "terminalHeader": "professional_status.sh",
+    "terminalLines": [
+      "degree: B.Sc. Computer Engineering @ UFG (3rd semester)",
+      "focus: Backend, Software Engineering, Automation & Integration",
+      "core_stack: Java, Spring Boot, Python, C (C11), Kotlin, SQL",
+      "objective: Software Engineering Internship (up to 6h/day)"
+    ]
+  },
+  "education": [
+    {
+      "course": "B.Sc. in Computer Engineering",
+      "institution": "Federal University of Goiás (UFG)",
+      "period": "August/2025 – December/2030 (expected)",
+      "status": "Currently enrolled in the 3rd semester"
+    }
+  ],
+  "experience": [
+    {
+      "role": "IT & Administrative Apprentice",
+      "organization": "Santa Casa de Misericórdia de Goiânia (via CESAM)",
+      "period": "March/2024 – August/2025",
+      "highlights": [
+        "Provided technical support and daily troubleshooting across IT and administrative areas.",
+        "Worked across multiple hospital departments, developing strong communication and teamwork."
+      ]
+    }
+  ],
+  "skills": {
+    "backendCloud": {
+      "title": "Backend & Cloud",
+      "items": [
+        "Java",
+        "Python",
+        "C (C11)",
+        "Spring Boot",
+        "JDBC",
+        "JDA",
+        "SQL",
+        "MySQL",
+        "PostgreSQL",
+        "SQLite",
+        "Aiven",
+        "Railway"
+      ]
+    },
+    "mobileDesktopTools": {
+      "title": "Mobile, Desktop & Tooling",
+      "items": [
+        "Kotlin",
+        "Android SDK",
+        "Jetpack Compose",
+        "JavaFX",
+        "Gradle",
+        "Git & GitHub",
+        "Linux",
+        "IMAP"
+      ]
+    },
+    "fundamentals": {
+      "title": "Computer Science Fundamentals",
+      "items": [
+        "Optimization Algorithms",
+        "Data Structures",
+        "Linear Algebra",
+        "Object-Oriented Programming",
+        "Relational Data Modeling"
+      ]
+    },
+    "languages": {
+      "title": "Spoken Languages",
+      "items": [
+        {
+          "name": "Portuguese",
+          "level": "Native"
+        },
+        {
+          "name": "English",
+          "level": "Intermediate"
+        },
+        {
+          "name": "Spanish",
+          "level": "Intermediate"
+        },
+        {
+          "name": "French",
+          "level": "Basic"
+        }
+      ]
+    }
+  },
+  "aiUsage": {
+    "title": "Transparent Use of AI Tools",
+    "text": "Used as an analytical aid without delegating technical decisions; all generated code is rigorously validated. Audited projects by mapping security and logic flaws, executing a security-focused refactoring plan (transactions, layered separation), and generating technical documentation."
+  },
+  "engineering": {
+    "title": "Engineering Profile & Technical Decisions",
+    "subtitle": "How I structure software architecture, model data, and evaluate technical trade-offs across projects.",
+    "topics": [
+      {
+        "title": "Backend Development & Layered Architecture",
+        "concept": "Separation of concerns across presentation/controllers, business rules, and data persistence layers (DAO/Repositories).",
+        "whereUsed": "SystemRPG (ZERO RPG) and Fleet Management & Telemetry.",
+        "problemSolved": "Prevents tight coupling between JavaFX views or REST endpoints and SQL queries.",
+        "decision": "Isolate domain rules inside dedicated service classes and keep database operations parameterized.",
+        "learning": "Continuously improving standardized exception handling, transactions, and Maven project organization."
+      },
+      {
+        "title": "REST APIs, Economy Engine & Relational Modeling",
+        "concept": "HTTP contracts paired with normalized SQL schemas and transactional rule validation.",
+        "whereUsed": "SystemRPG (Java 21, Spring Boot, Spring Security, JDBC, MySQL) and Fleet Management (SQLite).",
+        "problemSolved": "Automating character sheets, live dice rolls, hardware reality status, corruption levels, and multi-currency economy flows (R$, G, TR).",
+        "decision": "Validate attribute distribution, skills, and currency balances server-side prior to cloud persistence.",
+        "learning": "Completed role-based access control (PLAYER, MESTRE, ADMIN), CSRF protection, ownership validation (IDOR prevention), @Transactional persistence, and automated JUnit 5 + MockMvc + H2 tests."
+      },
+      {
+        "title": "Asynchronous Processing & System Integration",
+        "concept": "Background workers and concurrent reading of multiple file attachments and external protocols.",
+        "whereUsed": "Academic Bot (Java, Discord JDA, IMAP) and 4BIAVS / BIA4vs (Python).",
+        "problemSolved": "Asynchronous polling of academic emails via IMAP and parallel attachment reading for code analysis without blocking the UI.",
+        "decision": "Decouple IMAP polling and context processing into independent worker threads.",
+        "learning": "Stabilizing the web search routine in BIA4vs and refining IMAP reconnection handling."
+      },
+      {
+        "title": "Algorithms, Data Structures & Optimization",
+        "concept": "Applying classic data structures (stacks, queues, linear/binary search, QuickSort, and dynamic programming) to practical problems.",
+        "whereUsed": "Academic Bot (priority study block distribution using the 0/1 Knapsack Problem) and UFG coursework.",
+        "problemSolved": "Optimal allocation of study tasks within a limited daily time budget.",
+        "decision": "Model tasks with weight (estimated hours) and value (priority/deadline) for deterministic optimization.",
+        "learning": "Completing the integration of the 0/1 Knapsack optimizer into interactive Discord commands."
+      },
+      {
+        "title": "Application Security & Mobile/Desktop Development",
+        "concept": "Reactive native UIs, role-based authentication, and strict adherence to OS permission sandboxes.",
+        "whereUsed": "Guardião Mobile (Kotlin, Jetpack Compose, Android SDK) and Fleet Management (JavaFX).",
+        "problemSolved": "RAM/background app monitoring, automatic folder-routed downloads, local VPN on Android, and operator/driver panels on desktop.",
+        "decision": "Distinguish system vs. user apps on Android and enforce role-based authentication on desktop with ongoing BCrypt hashing migration.",
+        "learning": "Developing the experimental antivirus scanner on Android while respecting OS sandbox constraints."
+      }
+    ]
+  },
+  "githubSection": {
+    "title": "GitHub & Repositories",
+    "subtitle": "Direct access to source code and verified project statuses. Static fallback data guarantees full usability even if the GitHub API is unreachable.",
+    "profileLabel": "Official profile:",
+    "loadLiveButton": "Fetch latest metadata from GitHub Public API",
+    "fallbackNotice": "Showing locally verified repository catalog. Page navigation never blocks on external API calls."
+  },
+  "contactSection": {
+    "title": "Professional Contact & Resume",
+    "subtitle": "Open to Software Engineering internship opportunities (up to 6h/day) and technical discussions regarding backend, automation, and software architecture.",
+    "ctaEmail": "Send Email",
+    "copyEmail": "Copy Email",
+    "copiedFeedback": "Email copied to clipboard!"
+  }
+}

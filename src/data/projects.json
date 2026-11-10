@@ -1,0 +1,422 @@
+{
+  "statusLabels": {
+    "pt-BR": {
+      "development": "Em desenvolvimento",
+      "optimization": "Em otimização e melhorias",
+      "specification": "Em especificação e melhorias",
+      "completed": "Concluído",
+      "paused": "Pausado"
+    },
+    "en": {
+      "development": "In development",
+      "optimization": "In optimization & improvements",
+      "specification": "In specification & improvements",
+      "completed": "Completed",
+      "paused": "Paused"
+    }
+  },
+  "categories": {
+    "pt-BR": {
+      "all": "Todas as áreas",
+      "backend": "Backend & APIs",
+      "ai": "IA & Automação",
+      "desktop": "Desktop & Sistemas",
+      "mobile": "Mobile Android"
+    },
+    "en": {
+      "all": "All areas",
+      "backend": "Backend & APIs",
+      "ai": "AI & Automation",
+      "desktop": "Desktop & Systems",
+      "mobile": "Android Mobile"
+    }
+  },
+  "projects": [
+    {
+      "id": "systemrpg",
+      "name": "SystemRPG (ZERO RPG) — Gerenciamento de Fichas e Regras",
+      "name_en": "SystemRPG (ZERO RPG) — Character Sheet & Rules Engine",
+      "category": "backend",
+      "status": "optimization",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "MySQL",
+        "JDBC",
+        "WebSocket",
+        "Thymeleaf"
+      ],
+      "repository": "https://github.com/VictorEduardo-coder/SystemRPG",
+      "image": "./public/images/projects/systemrpg.webp",
+      "gallery": [
+        {
+          "src": "./public/images/projects/systemrpg-status.webp",
+          "captionPt": "Ficha do Personagem: moedas (R$, G, TR), Falha Obrigatória e distribuição de 15 pontos em 6 Status Base",
+          "captionEn": "Character Sheet: currencies (R$, G, TR), Mandatory Flaw, and 15-point distribution across 6 Base Stats"
+        },
+        {
+          "src": "./public/images/projects/systemrpg-rolagens.webp",
+          "captionPt": "Painel do Mestre: Registro de Rolagens (Ao Vivo), Manual, Habilidades, NPCs, Monstros e Bosses",
+          "captionEn": "Game Master Panel: Live Dice Roll Log, Rulebook, Skills, NPCs, Monsters, and Bosses"
+        },
+        {
+          "src": "./public/images/projects/systemrpg-realidade.webp",
+          "captionPt": "Perícias (9 habilidades), Status do Hardware (Realidade: saldo R$, custo de vida, nutrição, conexão) e Corrupção (0/100)",
+          "captionEn": "Skills (9 abilities), Hardware Reality Status (balance, living cost, nutrition, connection), and Corruption meter (0/100)"
+        },
+        {
+          "src": "./public/images/projects/systemrpg-criacao.webp",
+          "captionPt": "Onboarding de Jogador: criação de nova ficha de nível 1 ('O Meu Aventureiro')",
+          "captionEn": "Player Onboarding: level-1 character sheet creation ('O Meu Aventureiro')"
+        },
+        {
+          "src": "./public/images/projects/systemrpg-login.webp",
+          "captionPt": "Tela de Autenticação e criação de conta do ZERO RPG",
+          "captionEn": "ZERO RPG Authentication and account registration screen"
+        }
+      ],
+      "demo": null,
+      "pt": {
+        "summary": "Aplicação web e backend em Java 21 e Spring Boot 3 para gerenciamento de fichas, inventário, compêndio de classes e rolagens de dados em tempo real do sistema autoral ZERO RPG. Em desenvolvimento, passando por melhorias de segurança, persistência e otimização (sem demonstração online disponível no momento).",
+        "problem": "Centralizar regras de negócio, cálculos de atributos/perícias, estado de 'Hardware (Realidade)', nível de corrupção e rolagens ao vivo em sessões de RPG.",
+        "role": "Desenvolvimento backend em Java/Spring Boot, modelagem relacional em nuvem (Aiven), interface web escura e deploy contínuo (Railway).",
+        "implemented": [
+          "Autenticação com BCrypt e controle de acesso baseado em perfis (PLAYER, MESTRE e ADMIN) via Spring Security e @PreAuthorize, bloqueando elevação de privilégio no cadastro público.",
+          "Identificação segura do usuário autenticado via SecurityContext (AutenticacaoHelper), eliminando manipulação de usuarioId (IDOR) na visualização e edição de fichas e inventários.",
+          "Proteção CSRF ativa em todos os formulários Thymeleaf e requisições fetch(), cookies de sessão HttpOnly/SameSite e validação de autenticação/permissão no canal WebSocket (/topic/mestre) com prevenção de XSS no log ao vivo.",
+          "Modelagem relacional corrigida com integridade referencial (chave estrangeira ficha_id ON DELETE CASCADE em inventario_rpg e DECIMAL para moedas), unificação do DataSource do Spring Boot com ConexaoDB e transações @Transactional no ItemDAO.",
+          "Parser de expressões de dados (DadoService) validado integralmente por regex e suíte de testes automatizados (JUnit 5, MockMvc e H2 em modo MySQL) cobrindo segurança, autorização e persistência."
+        ],
+        "inProgress": [
+          "Expansão da camada Service e criação de DTOs para desacoplar integralmente regras de negócio dos Controllers e DAOs.",
+          "Implementação de tratamento global de exceções (@ControllerAdvice) e padronização de respostas da API.",
+          "Desbloqueio interativo de habilidades por gasto de Pontos de Habilidade (PH) diretamente pela interface."
+        ],
+        "nextSteps": [
+          "Documentação dos endpoints REST com OpenAPI / Swagger.",
+          "Configuração de pipeline CI/CD no GitHub Actions para compilação e execução automática da suíte de testes."
+        ],
+        "limitations": "Sem demonstração online disponível no momento (o antigo ambiente de testes foi desativado). O projeto é executado localmente via Maven ou Docker com MySQL ou banco H2 em memória."
+      },
+      "en": {
+        "summary": "Web and backend application built with Java 21 and Spring Boot 3 for managing character sheets, inventory, class compendiums, and live dice rolls for the original ZERO RPG system. Actively undergoing security and architectural improvements (no live online demo currently available).",
+        "problem": "Centralize domain rules, attribute/skill calculations, 'Hardware (Reality)' status, corruption tracking, and live dice rolls during RPG sessions.",
+        "role": "Backend engineering with Java/Spring Boot, cloud database modeling (Aiven), dark web UI, and continuous deployment (Railway).",
+        "implemented": [
+          "BCrypt authentication and role-based access control (PLAYER, MESTRE, ADMIN) via Spring Security and @PreAuthorize, preventing privilege escalation on public registration.",
+          "Server-side user resolution via SecurityContext (AutenticacaoHelper), eliminating IDOR vulnerabilities across character sheets and inventory endpoints.",
+          "Full CSRF protection across Thymeleaf forms and fetch() calls, HttpOnly/SameSite session cookies, and authenticated WebSocket channel interception (/topic/mestre) with DOM XSS prevention.",
+          "Relational schema integrity (ficha_id foreign key with ON DELETE CASCADE on inventario_rpg and DECIMAL monetary columns), unified Spring DataSource connection pooling in ConexaoDB, and @Transactional operations in ItemDAO.",
+          "Full-expression regex validation in DadoService and automated test suites (JUnit 5, MockMvc, H2 MySQL mode) validating security, role authorization, and database persistence."
+        ],
+        "inProgress": [
+          "Expanding the Service layer and introducing DTOs to fully decouple domain logic from Controllers and DAOs.",
+          "Implementing centralized exception handling (@ControllerAdvice) and standardized API responses.",
+          "Interactive skill unlocking using Skill Points (PH) directly in the UI."
+        ],
+        "nextSteps": [
+          "Documenting REST endpoints with OpenAPI / Swagger.",
+          "Setting up a GitHub Actions CI/CD workflow for automated builds and test execution."
+        ],
+        "limitations": "No live online demonstration is currently available (previous cloud sandbox was retired). The system runs locally via Maven or Docker using MySQL or in-memory H2."
+      },
+      "demoUrl": null
+    },
+    {
+      "id": "gestao-frotas",
+      "name": "Gestão de Frotas e Telemetria — Aplicação Desktop",
+      "name_en": "Fleet Management & Telemetry — Desktop Application",
+      "category": "desktop",
+      "status": "specification",
+      "technologies": [
+        "Java",
+        "JavaFX",
+        "SQLite"
+      ],
+      "repository": "https://github.com/VictorEduardo-coder/Gestao-de-Frotas",
+      "image": "./public/images/projects/gestao-frotas.webp",
+      "gallery": [
+        {
+          "src": "./public/images/projects/gestao-frotas-arquitetura.webp",
+          "captionPt": "Diagrama de Arquitetura: Gerenciador da Frota, Veículos (Automóvel/Drone), Sensores e Atualização em Tempo Real",
+          "captionEn": "Architecture Diagram: Fleet Manager, Vehicles (Car/Drone), Sensors, and Real-Time Telemetry Updates"
+        },
+        {
+          "src": "./public/images/projects/gestao-frotas-operador.webp",
+          "captionPt": "Painel do Operador / Instalador: sessão autenticada (1 Fator) e menu de controle",
+          "captionEn": "Operator / Installer Panel: authenticated session (1-Factor) and control menu"
+        },
+        {
+          "src": "./public/images/projects/gestao-frotas-veiculos.webp",
+          "captionPt": "Cadastro de Veículos (Placa/ID) e vínculo de usuário condutor",
+          "captionEn": "Vehicle Registration (License Plate/ID) and driver user binding"
+        },
+        {
+          "src": "./public/images/projects/gestao-frotas-sensores.webp",
+          "captionPt": "Cadastro de Sensores: instalação e vínculo de hardware de telemetria por veículo",
+          "captionEn": "Sensor Registration: installing and binding telemetry hardware per vehicle"
+        },
+        {
+          "src": "./public/images/projects/gestao-frotas-diagnostico.webp",
+          "captionPt": "Área do Motorista (Teste de Sensor): velocímetro em tempo real e varredura de sinal",
+          "captionEn": "Driver Area (Sensor Test): real-time speedometer and signal verification scan"
+        },
+        {
+          "src": "./public/images/projects/gestao-frotas-motorista.webp",
+          "captionPt": "Área do Motorista (Meu Veículo & Sensores): dados do veículo vinculado (#042) e status operacional",
+          "captionEn": "Driver Area (My Vehicle & Sensors): bound vehicle details (#042) and operational status"
+        },
+        {
+          "src": "./public/images/projects/gestao-frotas-login.webp",
+          "captionPt": "Tela de Login desktop em JavaFX com acesso e registro de conta",
+          "captionEn": "JavaFX Desktop Login screen with account authentication and registration"
+        }
+      ],
+      "demo": null,
+      "pt": {
+        "summary": "Aplicação desktop em Java e JavaFX com banco SQLite para gestão de veículos, vínculo de sensores de telemetria e painéis dedicados para Operador e Motorista.",
+        "problem": "Gerenciar o ciclo de vida de uma frota (automóveis e drones), associando dispositivos de telemetria (velocímetro, altímetro, portas) e oferecendo diagnóstico visual.",
+        "role": "Arquitetura orientada a objetos em Java, interfaces desktop em JavaFX, persistência SQLite e plano de evolução arquitetural.",
+        "implemented": [
+          "Tela de Login e controle de sessão com Painel do Operador/Instalador (Autenticado 1 Fator) e Área do Motorista.",
+          "Cadastro e remoção de veículos (Placa/ID) e vínculo com usuários cadastrados.",
+          "Tela de vínculo de dispositivos de telemetria (sensores de RPM, GPS, velocidade, portas) por veículo.",
+          "Painel do Motorista com abas 'Meu Veículo & Sensores', 'Calcular Rota' e 'Teste de Sensor' com velocímetro digital e barra de varredura."
+        ],
+        "inProgress": [
+          "Refinamento da separação estrita em camadas.",
+          "Implementação de hash de senhas com BCrypt.",
+          "Migração e padronização de build para Apache Maven.",
+          "Integração de mensageria MQTT para telemetria remota."
+        ],
+        "nextSteps": [
+          "Testes integrados da camada de persistência SQLite após migração completa para Maven.",
+          "Simulador de publicação de pacotes MQTT conectado ao painel de varredura."
+        ],
+        "limitations": "Projeto em etapa de especificação e melhorias; separação em camadas, BCrypt, migração para Maven e integração MQTT estão em andamento."
+      },
+      "en": {
+        "summary": "Java and JavaFX desktop application backed by SQLite for managing vehicles, binding telemetry sensors, and providing dedicated Operator and Driver panels.",
+        "problem": "Manage a heterogeneous fleet (cars and drones), associate telemetry hardware (speedometer, altimeter, door sensors), and provide real-time diagnostic views.",
+        "role": "Object-oriented design in Java, JavaFX desktop screens, SQLite persistence, and architectural refactoring plan.",
+        "implemented": [
+          "Login screen and session routing for Operator/Installer (1-Factor Authenticated) and Driver panels.",
+          "Vehicle registration/removal (License Plate/ID) and driver user assignment.",
+          "Telemetry hardware binding interface per vehicle.",
+          "Driver Control Panel featuring 'My Vehicle & Sensors', 'Calculate Route', and 'Sensor Test' with digital speedometer and scan progress."
+        ],
+        "inProgress": [
+          "Strict layered architecture separation.",
+          "Password hashing migration to BCrypt.",
+          "Build system migration to Apache Maven.",
+          "MQTT broker integration for live sensor feeds."
+        ],
+        "nextSteps": [
+          "Automated persistence tests following the Maven structure migration.",
+          "Connect simulated MQTT publisher streams to the Driver diagnostic table."
+        ],
+        "limitations": "Currently in specification and improvement phase; layered separation, BCrypt hashing, Maven migration, and MQTT integration are work in progress."
+      },
+      "demoUrl": null
+    },
+    {
+      "id": "guardiao-mobile",
+      "name": "Guardião Mobile — Utilitário Android & Firewall VPN",
+      "name_en": "Guardião Mobile — Android Utility & Local VPN Firewall",
+      "category": "mobile",
+      "status": "development",
+      "technologies": [
+        "Kotlin",
+        "Android SDK",
+        "Jetpack Compose"
+      ],
+      "repository": "https://github.com/VictorEduardo-coder/GuardiaoMobile",
+      "image": "./public/images/projects/guardiao-mobile.webp",
+      "gallery": [
+        {
+          "src": "./public/images/projects/guardiao-mobile.webp",
+          "captionPt": "Visão Geral das 3 Telas: Central de Proteção, Memória e 2º Plano e Downloads Automáticos",
+          "captionEn": "3-Screen Overview: Protection Hub, Memory & Background Apps, and Automatic Downloads"
+        },
+        {
+          "src": "./public/images/projects/guardiao-mobile-central.webp",
+          "captionPt": "Central de Proteção: status geral, Antivírus (Sistema vs Usuário), Firewall VPN e Anti-Malvertising",
+          "captionEn": "Protection Hub: overall status, Antivirus (System vs User), Local VPN Firewall & Anti-Malvertising"
+        },
+        {
+          "src": "./public/images/projects/guardiao-mobile-memoria.webp",
+          "captionPt": "Memória e 2º Plano: leitura de RAM em uso (51% — 3,84 GB / 7,42 GB) e listagem de serviços por app",
+          "captionEn": "Memory & Background Apps: RAM usage gauge (51% — 3.84 GB / 7.42 GB) and active background services per app"
+        },
+        {
+          "src": "./public/images/projects/guardiao-mobile-downloads.webp",
+          "captionPt": "Downloads Automáticos: roteamento direto para pastas organizadas (Videos, Fotos e Audios)",
+          "captionEn": "Automatic Downloads: direct routing into organized folders (Videos, Photos, and Audio)"
+        }
+      ],
+      "demo": null,
+      "pt": {
+        "summary": "Aplicativo Android nativo com interface reativa em Jetpack Compose, organização automática de mídia em pastas, monitoramento de RAM e VPN local.",
+        "problem": "Reunir em uma interface Android limpa o roteamento organizado de downloads por tipo de arquivo, inspeção de consumo de memória/serviços em 2º plano e filtragem local via VPN.",
+        "role": "Desenvolvimento Android nativo em Kotlin utilizando Jetpack Compose e APIs do Android SDK.",
+        "implemented": [
+          "Interface reativa em Jetpack Compose com navegação inferior (Início, Downloads, Antivírus, Memória, Mais).",
+          "Módulo de Downloads Automáticos que classifica e salva arquivos diretamente em pastas dedicadas (GuardiaoMobile/Videos, Fotos e Audios).",
+          "Painel 'Memória e 2º Plano' exibindo percentual de RAM em uso, memória livre e quantidade de serviços em segundo plano por aplicativo (diferenciando Sistema vs. Usuário).",
+          "Estrutura de VPN local (Firewall VPN e Anti-Malvertising) para filtragem de conexões no dispositivo."
+        ],
+        "inProgress": [
+          "Módulo de verificação Antivírus (diferenciação entre apps do sistema, apps de usuário e arquivos baixados) em desenvolvimento.",
+          "Refinamento das permissões e preparação do repositório para publicação aberta."
+        ],
+        "nextSteps": [
+          "Documentação técnica detalhada sobre as limitações do sandbox do Android para gerenciamento de processos.",
+          "Publicação do código-fonte no GitHub após revisão final."
+        ],
+        "limitations": "Transparência técnica: o módulo antivírus e o filtrador VPN estão em desenvolvimento e operam dentro dos limites estritos do sandbox do Android, sem prometer proteção absoluta ou liberação forçada de RAM além das APIs oficiais do sistema operacional."
+      },
+      "en": {
+        "summary": "Native Android application featuring a reactive Jetpack Compose UI, automatic folder-based media organization, RAM monitoring, and a local VPN.",
+        "problem": "Provide a unified Android utility for routing downloads into structured media folders, inspecting RAM/background services, and filtering traffic via a local VPN.",
+        "role": "Native Android development in Kotlin using Jetpack Compose and the Android SDK.",
+        "implemented": [
+          "Reactive Jetpack Compose UI with bottom navigation (Home, Downloads, Antivirus, Memory, More).",
+          "Automatic Downloads module routing media directly into structured folders (GuardiaoMobile/Videos, Fotos, Audios).",
+          "Memory & Background Apps screen displaying used/free RAM and active background service counts per app (System vs. User tags).",
+          "Local VPN Firewall & Anti-Malvertising module structure."
+        ],
+        "inProgress": [
+          "Antivirus verification module (inspecting system apps, user apps, and downloads) currently in development.",
+          "Permission scope refinement and repository preparation."
+        ],
+        "nextSteps": [
+          "Document Android OS sandbox constraints regarding background process management.",
+          "Publish repository on GitHub following final review."
+        ],
+        "limitations": "Technical transparency: the antivirus and VPN filtering modules are in development and operate strictly within Android OS sandbox boundaries."
+      },
+      "demoUrl": null
+    },
+    {
+      "id": "4biavs",
+      "name": "4BIAVS (BIA4vs) — Assistente Desktop de IA e Análise de Código",
+      "name_en": "4BIAVS (BIA4vs) — Desktop AI Assistant & Code Analyzer",
+      "category": "ai",
+      "status": "development",
+      "technologies": [
+        "Python"
+      ],
+      "repository": "https://github.com/VictorEduardo-coder/BIA4vs",
+      "image": "./public/images/projects/4biavs.webp",
+      "gallery": [
+        {
+          "src": "./public/images/projects/4biavs.webp",
+          "captionPt": "Interface Desktop do BIA4vs: gerenciamento de conversas (Nova Conversa, Renomear, Excluir), botão Anexar e prompt de pesquisa/análise de código",
+          "captionEn": "BIA4vs Desktop UI: conversation management (New, Rename, Delete), Attach file button, and research/code analysis prompt"
+        }
+      ],
+      "demo": null,
+      "pt": {
+        "summary": "Assistente desktop de IA em Python focado em pesquisa e análise de código, com leitura paralela de múltiplos anexos e gerenciamento de histórico de conversas.",
+        "problem": "Oferecer um ambiente desktop leve para submeter arquivos de código e perguntas técnicas com gerenciamento local de sessões de conversa.",
+        "role": "Arquitetura e implementação em Python, construção da interface gráfica escura, leitura paralela de anexos e rotina de busca web.",
+        "implemented": [
+          "Interface desktop escura ('BIA4vs — Assistente de Pesquisa e Análise de Código') com indicador de status e histórico lateral (+ Nova Conversa, Renomear, Excluir).",
+          "Suporte a envio de arquivos via botão 'Anexar' com leitura paralela de múltiplos anexos e gerenciamento de contexto inicial.",
+          "Modelo inicial de teste integrado ao fluxo de mensagens."
+        ],
+        "inProgress": [
+          "Correção e estabilização da funcionalidade de pesquisa na internet.",
+          "Evolução da adaptação ao perfil do usuário e consolidação de base de conhecimento própria."
+        ],
+        "nextSteps": [
+          "Refinar o parser de respostas de busca externa e persistência de contexto de longo prazo.",
+          "Ampliar testes automatizados para diferentes formatos de arquivos anexados."
+        ],
+        "limitations": "Transparência técnica: projeto em desenvolvimento inicial. O modelo ainda não possui base de conhecimento própria consolidada nem memória autônoma avançada, e o módulo de pesquisa na internet está em fase de correção."
+      },
+      "en": {
+        "summary": "Python desktop AI assistant tailored for research and code analysis, featuring parallel reading of multiple attachments and conversation management.",
+        "problem": "Provide a lightweight desktop workspace for submitting source code attachments and technical queries with local session history.",
+        "role": "Python architecture and implementation, dark desktop UI design, parallel attachment reader, and web search routine.",
+        "implemented": [
+          "Dark desktop interface ('BIA4vs — Research and Code Analysis Assistant') with sidebar session management (+ New Conversation, Rename, Delete).",
+          "Attachment support ('Anexar') with parallel reading of multiple files and initial context management.",
+          "Initial test model integrated into the chat pipeline."
+        ],
+        "inProgress": [
+          "Fixing and stabilizing the internet search implementation.",
+          "Advancing user adaptation and building a consolidated internal knowledge base."
+        ],
+        "nextSteps": [
+          "Refine external search parsing and long-term context persistence.",
+          "Expand automated tests for diverse attachment file types."
+        ],
+        "limitations": "Technical transparency: project in early development. The model does not yet have a consolidated knowledge base or autonomous long-term memory, and web search is currently being fixed."
+      },
+      "demoUrl": null
+    },
+    {
+      "id": "bot-academico",
+      "name": "Bot Acadêmico — Organização de Estudos no Discord",
+      "name_en": "Academic Bot — Discord Study Organization",
+      "category": "ai",
+      "status": "development",
+      "technologies": [
+        "Java",
+        "JDA",
+        "IMAP"
+      ],
+      "repository": "https://github.com/VictorEduardo-coder/bot-academico",
+      "image": "./public/images/projects/bot-academico.webp",
+      "gallery": [
+        {
+          "src": "./public/images/projects/bot-academico.webp",
+          "captionPt": "Diagrama de Arquitetura: Leitor IMAP -> Worker Assíncrono -> Otimizador da Mochila 0/1 -> Bot Discord JDA",
+          "captionEn": "Architecture Diagram: IMAP Reader -> Async Worker -> 0/1 Knapsack Optimizer -> Discord JDA Bot"
+        }
+      ],
+      "demo": null,
+      "pt": {
+        "summary": "Bot para Discord em Java (JDA) com worker assíncrono que lê e-mails acadêmicos via protocolo IMAP e distribui blocos de estudo por prioridade.",
+        "problem": "Auxiliar estudantes a não perderem prazos acadêmicos, centralizando avisos recebidos por e-mail e organizando a rotina de estudos diretamente no Discord.",
+        "role": "Desenvolvimento backend em Java com JDA, cliente IMAP assíncrono e implementação do algoritmo do Problema da Mochila.",
+        "implemented": [
+          "Integração com o Discord utilizando a biblioteca JDA.",
+          "Worker assíncrono para conexão e leitura de e-mails acadêmicos por protocolo IMAP.",
+          "Modelagem de tarefas por prioridade e tempo estimado."
+        ],
+        "inProgress": [
+          "Implementação e validação da distribuição automática de blocos de estudo usando o Problema da Mochila 0/1.",
+          "Refinamento dos comandos de interação e notificações agendadas."
+        ],
+        "nextSteps": [
+          "Finalizar a bateria de testes de integração entre o parser IMAP e o otimizador de cronograma.",
+          "Documentar guia de configuração segura via variáveis de ambiente."
+        ],
+        "limitations": "Em desenvolvimento. Nenhuma credencial real, endereço de e-mail de terceiros ou conteúdo privado de mensagens é exposto no repositório."
+      },
+      "en": {
+        "summary": "Java Discord bot (JDA) with an asynchronous worker that reads academic emails via IMAP and distributes study blocks by priority.",
+        "problem": "Help students stay on top of academic deadlines by bridging email notifications with automated study scheduling on Discord.",
+        "role": "Java development with JDA, asynchronous IMAP email polling, and 0/1 Knapsack optimization logic.",
+        "implemented": [
+          "Discord bot integration built with JDA.",
+          "Asynchronous background worker polling academic emails via IMAP.",
+          "Task modeling based on priority and estimated study hours."
+        ],
+        "inProgress": [
+          "Implementation and end-to-end validation of study block distribution using the 0/1 Knapsack Problem.",
+          "Refining interactive Discord commands and scheduled reminders."
+        ],
+        "nextSteps": [
+          "Complete integration tests between the IMAP parser and schedule optimizer.",
+          "Document environment-variable configuration."
+        ],
+        "limitations": "In active development. No real credentials, third-party email addresses, or private messages are stored in the public repository."
+      },
+      "demoUrl": null
+    }
+  ]
+}

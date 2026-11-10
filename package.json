@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-victor-eduardo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfólio profissional e vitrine técnica de Victor Eduardo (Engenharia da Computação - UFG)",
+  "scripts": {
+    "test": "node tests/algorithms.test.js && node tests/project-data.test.js",
+    "start": "python3 -m http.server 8000"
+  }
+}
