@@ -3,6 +3,7 @@ import { escapeHtml } from "../components/status-badge.js";
 export function renderHomeSection(profile) {
   const isEn = profile.lang === "en";
   const greetingSmall = isEn ? "Hello, I'm" : "Olá, sou";
+  const marqueeTitle = isEn ? "PORTFOLIO" : "PORTIFÓLIO";
 
   const resumeButtonsHtml = profile.resume.available
     ? `
@@ -92,7 +93,7 @@ export function renderHomeSection(profile) {
     <section class="section" id="home" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero-marquee-wrap" data-swarm-target="hero-marquee">
-          <span class="hero-marquee-title" aria-hidden="true">PORTFOLIO</span>
+          <span class="hero-marquee-title" aria-hidden="true">${escapeHtml(marqueeTitle)}</span>
         </div>
 
         <div class="hero-3col">

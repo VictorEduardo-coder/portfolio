@@ -6,8 +6,8 @@ export function renderProjectCard(project, statusLabels, lang, index = 0) {
   const title = isEn ? project.name_en : project.name;
   const detailsText = isEn ? "Screens & Architecture" : "Telas & Arquitetura";
   const repoText = isEn ? "Repository ↗" : "Repositório ↗";
-  const repoPendingText = isEn ? "Private / In Prep" : "Privado / Em Preparo";
-  const demoLiveText = isEn ? "Live Demo ↗" : "Demonstração ↗";
+  const repoPendingText = isEn ? "Repo In Prep" : "Repo em Preparo";
+  const labText = isEn ? "Tech Lab" : "Tech Lab";
   const sysCode = `SYS_0${index + 1}`;
   const galleryCount = Array.isArray(project.gallery) ? project.gallery.length : 1;
   const galleryBadgeText = isEn
@@ -27,8 +27,8 @@ export function renderProjectCard(project, statusLabels, lang, index = 0) {
     ? `<a class="btn btn-secondary" href="${escapeHtml(project.repository)}" target="_blank" rel="noopener noreferrer">${repoText}</a>`
     : `<span class="btn btn-ghost" aria-disabled="true">${repoPendingText}</span>`;
 
-  const demoAction = project.demoUrl
-    ? `<a class="btn btn-ghost" href="${escapeHtml(project.demoUrl)}" target="_blank" rel="noopener noreferrer">${demoLiveText}</a>`
+  const demoAction = project.demo
+    ? `<a class="btn btn-ghost" href="#tech-lab" data-open-lab="${escapeHtml(project.demo)}">${labText}</a>`
     : "";
 
   return `
@@ -48,7 +48,6 @@ export function renderProjectCard(project, statusLabels, lang, index = 0) {
           width="640"
           height="360"
           loading="lazy"
-          decoding="async"
           style="cursor:pointer;"
           data-open-modal="${escapeHtml(project.id)}"
         />
@@ -60,7 +59,7 @@ export function renderProjectCard(project, statusLabels, lang, index = 0) {
         <ul class="timeline-list" style="margin-top:10px;margin-bottom:10px;">
           ${implementedPreview}
         </ul>
-        <ul class="tag-list" aria-label="${isEn ? "Technologies" : "Tecnologias"}">
+        <ul class="tag-list" aria-label="Technologies">
           ${tagsHtml}
         </ul>
       </div>
