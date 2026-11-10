@@ -3,7 +3,7 @@ import { escapeHtml } from "../components/status-badge.js";
 export function renderHomeSection(profile) {
   const isEn = profile.lang === "en";
   const greetingSmall = isEn ? "Hello, I'm" : "Olá, sou";
-  const marqueeTitle = isEn ? "PORTFOLIO" : "PORTIFÓLIO";
+  const marqueeTitle = isEn ? "PORTFOLIO" : "PORTFÓLIO";
 
   const resumeButtonsHtml = profile.resume.available
     ? `

@@ -65,13 +65,16 @@
 .hero-marquee-wrap {
   margin-bottom: 28px;
   user-select: none;
-  overflow: hidden;
+  /* Não cortar o acento agudo do Ó no topo do título. */
+  overflow: visible;
+  padding-top: 0.12em;
 }
 
 .hero-marquee-title {
   font-size: clamp(2.8rem, 10.8vw, 8.8rem);
   font-weight: 900;
-  line-height: 0.92;
+  /* A linha precisa de espaço acima das letras acentuadas. */
+  line-height: 1.08;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: rgba(229, 72, 77, 0.22);
