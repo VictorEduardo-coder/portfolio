@@ -33,6 +33,16 @@ function createCursorSvg(color) {
   </svg>`;
 }
 
+function getDispersedPosition(angle) {
+  const cx = window.innerWidth * 0.5;
+  const cy = window.innerHeight * 0.5;
+  const radius = Math.max(window.innerWidth, window.innerHeight) * 0.68 + 140;
+  return {
+    x: cx + Math.cos(angle) * radius,
+    y: cy + Math.sin(angle) * radius
+  };
+}
+
 function refreshActiveJobRects() {
   for (let i = 0; i < swarmState.activeJobs.length; i++) {
     const job = swarmState.activeJobs[i];
@@ -81,14 +91,15 @@ function runSwarmTick(now) {
   const cy = window.innerHeight * 0.5;
 
   if (!swarmState.bootPhaseDone) {
-    if (elapsed < 360) {
+    if (elapsed < 340) {
       swarmState.agents.forEach((ag, idx) => {
-        const a = ag.phaseOffset + elapsed * 0.006;
-        const r = 48 + (idx % 3) * 14;
+        const a = ag.phaseOffset + elapsed * 0.004;
+        const r = 44 + (idx % 3) * 12;
         ag.tx = cx + Math.cos(a) * r;
         ag.ty = cy + Math.sin(a) * r;
-        ag.x += (ag.tx - ag.x) * 0.25;
-        ag.y += (ag.ty - ag.y) * 0.25;
+        ag.x += (ag.tx - ag.x) * 0.22;
+        ag.y += (ag.ty - ag.y) * 0.22;
+        ag.el.style.opacity = "1";
         ag.el.style.transform = `translate3d(${ag.x.toFixed(1)}px, ${ag.y.toFixed(1)}px, 0)`;
       });
       swarmState.rafId = requestAnimationFrame(runSwarmTick);
@@ -119,6 +130,8 @@ function runSwarmTick(now) {
     const pullAgent = freeAgents[1];
     anchorAgent.busy = true;
     pullAgent.busy = true;
+    anchorAgent.el.style.opacity = "1";
+    pullAgent.el.style.opacity = "1";
 
     targetEl.classList.remove("swarm-pending");
     targetEl.classList.add("swarm-building");
@@ -182,18 +195,23 @@ function runSwarmTick(now) {
     }
   }
 
-  const orbitCenterX = Math.max(180, window.innerWidth - 90);
-  const orbitCenterY = window.innerHeight * 0.56;
+  const hasPendingWork = swarmState.queue.length > 0 || swarmState.activeJobs.length > 0;
 
-  swarmState.agents.forEach((ag, idx) => {
+  swarmState.agents.forEach((ag) => {
     if (!ag.busy) {
-      const t = now * 0.0018 + ag.phaseOffset;
-      const rx = 38 + (idx % 3) * 12;
-      const ry = 54 + (idx % 2) * 18;
-      ag.tx = orbitCenterX + Math.cos(t) * rx;
-      ag.ty = orbitCenterY + Math.sin(t * 1.3) * ry;
+      const dispersed = getDispersedPosition(ag.phaseOffset);
+      ag.tx = dispersed.x;
+      ag.ty = dispersed.y;
+      const distToTarget = Math.hypot(ag.tx - ag.x, ag.ty - ag.y);
+      if (!hasPendingWork && distToTarget < 180) {
+        ag.el.style.opacity = "0";
+      } else {
+        ag.el.style.opacity = "0.75";
+      }
+    } else {
+      ag.el.style.opacity = "1";
     }
-    const speed = ag.busy ? 0.34 : 0.09;
+    const speed = ag.busy ? 0.34 : 0.12;
     ag.x += (ag.tx - ag.x) * speed;
     ag.y += (ag.ty - ag.y) * speed;
     ag.el.style.transform = `translate3d(${ag.x.toFixed(1)}px, ${ag.y.toFixed(1)}px, 0)`;
@@ -202,8 +220,11 @@ function runSwarmTick(now) {
   if (
     swarmState.activeJobs.length === 0 &&
     swarmState.queue.length === 0 &&
-    now - swarmState.lastActivityTime > 4000
+    now - swarmState.lastActivityTime > 1600
   ) {
+    swarmState.agents.forEach((ag) => {
+      ag.el.style.opacity = "0";
+    });
     swarmState.hibernating = true;
     swarmState.rafId = null;
     return;
@@ -243,9 +264,6 @@ export function initCursorSwarm() {
   const isMobile = window.innerWidth <= 600;
   const activeDefs = isMobile ? AGENT_DEFS.slice(0, 4) : AGENT_DEFS;
 
-  const cx = window.innerWidth * 0.5;
-  const cy = window.innerHeight * 0.5;
-
   const bootHub = document.createElement("div");
   bootHub.className = "swarm-boot-hub";
   bootHub.textContent = ">_";
@@ -254,12 +272,11 @@ export function initCursorSwarm() {
 
   swarmState.agents = activeDefs.map((def, idx) => {
     const angle = (idx / activeDefs.length) * Math.PI * 2;
-    const radius = 50 + (idx % 3) * 15;
-    const x = cx + Math.cos(angle) * radius;
-    const y = cy + Math.sin(angle) * radius;
+    const startPos = getDispersedPosition(angle);
 
     const el = document.createElement("div");
     el.className = "swarm-cursor";
+    el.style.opacity = "1";
     el.innerHTML = `${createCursorSvg(def.color)}<span class="swarm-cursor-tag" style="background:${def.color}">${def.id}</span>`;
     overlay.appendChild(el);
 
@@ -267,10 +284,10 @@ export function initCursorSwarm() {
       id: def.id,
       color: def.color,
       el,
-      x,
-      y,
-      tx: x,
-      ty: y,
+      x: startPos.x,
+      y: startPos.y,
+      tx: startPos.x,
+      ty: startPos.y,
       busy: false,
       phaseOffset: angle
     };
