@@ -60,7 +60,7 @@ int main(void) {
     const double x[3] = {1.5, 2.0, 0.5};
     double y[2] = {0.0, 0.0};
     matvec_multiply(A, x, y, 2, 3);
-    printf("y = [%.2f, %.2f]\n", y[0], y[1]);
+    printf("y = [%.2f, %.2f]\\n", y[0], y[1]);
     return 0;
 }`,
     output: `[PRE-COMPUTED STDOUT]
@@ -68,24 +68,32 @@ Row 0: (2.0 * 1.5) + (1.0 * 2.0) + (0.0 * 0.5) = 5.00
 Row 1: (3.0 * 1.5) + (4.0 * 2.0) + (-1.0 * 0.5) = 12.00
 y = [5.00, 12.00]`
   },
-  "kotlin-compose": {
-    titlePt: "Kotlin / Jetpack Compose — Estado Imutável de UI",
-    titleEn: "Kotlin / Jetpack Compose — Immutable UI State",
-    language: "Kotlin + Jetpack Compose",
-    explanationPt: "Modelagem unidirecional de estado (UDF) no Android para exibir indicadores do dispositivo de forma reativa e previsível.",
-    explanationEn: "Unidirectional Data Flow (UDF) state modeling on Android to render device indicators predictably.",
-    code: `data class StorageUiState(
-    val mediaFilesCount: Int = 0,
-    val usedRamMb: Int = 0,
-    val totalRamMb: Int = 6144,
-    val isScanning: Boolean = false
-) {
-    val usageRatio: Float
-        get() = if (totalRamMb > 0) usedRamMb.toFloat() / totalRamMb else 0f
-}`,
-    output: `[PRE-COMPUTED STATE SNAPSHOT]
-StorageUiState(mediaFilesCount=148, usedRamMb=2890, totalRamMb=6144, isScanning=false)
-Computed usageRatio = 0.4703 (47.0%)`
+  "python-sqlite-context": {
+    titlePt: "Python / SQLite — Consulta Parametrizada de Contexto",
+    titleEn: "Python / SQLite — Parameterized Context Window Query",
+    language: "Python 3 + SQLite",
+    explanationPt: "Consulta SQL parametrizada com janela limitada de mensagens usada para manter histórico recente de conversas sem risco de SQL Injection.",
+    explanationEn: "Parameterized SQL query retrieving a bounded recent message window while preventing SQL injection.",
+    code: `import sqlite3
+from typing import List, Dict
+
+def fetch_recent_messages(conn: sqlite3.Connection, conv_id: int, limit: int = 12) -> List[Dict[str, str]]:
+    cursor = conn.execute(
+        """
+        SELECT role, content
+        FROM messages
+        WHERE conversation_id = ?
+        ORDER BY id DESC
+        LIMIT ?
+        """,
+        (conv_id, limit),
+    )
+    rows = cursor.fetchall()
+    return [{"role": role, "content": content} for role, content in reversed(rows)]`,
+    output: `[PRE-COMPUTED QUERY TRACE]
+Binding   : conv_id=7, limit=12 (parameterized)
+Rows read : 2 messages returned in chronological order
+Output    : [{"role": "user", "content": "Analise o SQL"}, {"role": "assistant", "content": "Uso seguro de placeholders."}]`
   }
 };
 
@@ -112,7 +120,7 @@ export function renderCodePlayground(lang) {
           <select id="code-example-select" class="field-input">
             <option value="spring-layered">${escapeHtml(isEn ? initial.titleEn : initial.titlePt)}</option>
             <option value="c11-linear">${escapeHtml(isEn ? CODE_EXAMPLES["c11-linear"].titleEn : CODE_EXAMPLES["c11-linear"].titlePt)}</option>
-            <option value="kotlin-compose">${escapeHtml(isEn ? CODE_EXAMPLES["kotlin-compose"].titleEn : CODE_EXAMPLES["kotlin-compose"].titlePt)}</option>
+            <option value="python-sqlite-context">${escapeHtml(isEn ? CODE_EXAMPLES["python-sqlite-context"].titleEn : CODE_EXAMPLES["python-sqlite-context"].titlePt)}</option>
           </select>
         </div>
       </div>

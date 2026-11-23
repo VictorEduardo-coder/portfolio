@@ -3,7 +3,7 @@ import { escapeHtml } from "../components/status-badge.js";
 export function renderHomeSection(profile) {
   const isEn = profile.lang === "en";
   const greetingSmall = isEn ? "Hello, I'm" : "Olá, sou";
-  const marqueeTitle = isEn ? "PORTFOLIO" : "PORTIFÓLIO";
+  const marqueeTitle = isEn ? "PORTFOLIO" : "PORTFÓLIO";
 
   const resumeButtonsHtml = profile.resume.available
     ? `
@@ -23,26 +23,26 @@ export function renderHomeSection(profile) {
           title: "Backend & Persistence",
           items: [
             "Java 21, Spring Boot & Spring Security applied in SystemRPG.",
-            "REST APIs, WebSockets, and relational SQL modeling (MySQL, SQLite).",
-            "JDBC, transactional integrity (@Transactional), and JUnit 5 / MockMvc tests."
+            "REST APIs, WebSockets, and relational SQL modeling (MySQL / TiDB, PostgreSQL, SQLite, H2).",
+            "JDBC, Docker multi-stage builds, and cloud deployment configuration (Render)."
           ]
         },
         {
-          num: "02 // MOBILE",
-          title: "Native Android Mobile",
+          num: "02 // AUTOMATION",
+          title: "Automation & Integrations",
           items: [
-            "Kotlin and Android SDK applied in Guardião Mobile.",
-            "Reactive interfaces built with Jetpack Compose.",
-            "Media folder routing, RAM usage inspection, and local VPN structure."
+            "Discord bot (JDA) + Javalin REST API + IMAP polling in Academic Bot.",
+            "PriorityQueue study scheduling heuristic and AES-GCM credential encryption.",
+            "Python desktop tooling (PyQt5 + QThread + SQLite) in BIA4vs."
           ]
         },
         {
-          num: "03 // TOOLS & DESKTOP",
-          title: "Tooling, Desktop & Automation",
+          num: "03 // DESKTOP & CORE",
+          title: "Desktop & CS Foundations",
           items: [
-            "Python (BIA4vs desktop assistant) and C (C11) fundamentals.",
-            "JavaFX desktop interfaces (Fleet Management) and Discord JDA + IMAP.",
-            "Git, GitHub, Linux environment, and Apache Maven."
+            "JavaFX desktop interfaces and simulated telemetry in Fleet Management.",
+            "Algorithms, data structures, linear algebra, and C (C11) fundamentals.",
+            "Git, GitHub Actions, Linux environment, and Apache Maven."
           ]
         }
       ]
@@ -52,26 +52,26 @@ export function renderHomeSection(profile) {
           title: "Backend & Persistência",
           items: [
             "Java 21, Spring Boot e Spring Security aplicados no SystemRPG.",
-            "APIs REST, WebSockets e modelagem relacional SQL (MySQL, SQLite).",
-            "JDBC, transações (@Transactional) e testes com JUnit 5 e MockMvc."
+            "APIs REST, WebSockets e modelagem SQL (MySQL / TiDB, PostgreSQL, SQLite, H2).",
+            "JDBC, containerização com Docker multi-stage e deploy em nuvem (Render)."
           ]
         },
         {
-          num: "02 // MOBILE",
-          title: "Mobile Android Nativo",
+          num: "02 // AUTOMAÇÃO",
+          title: "Automação & Integrações",
           items: [
-            "Kotlin e Android SDK aplicados no Guardião Mobile.",
-            "Interfaces reativas construídas com Jetpack Compose.",
-            "Organização de downloads em pastas, leitura de RAM e estrutura de VPN local."
+            "Bot Discord (JDA), API HTTP (Javalin) e leitura IMAP no Bot Acadêmico.",
+            "Alocação heurística de estudos via PriorityQueue e criptografia AES-GCM.",
+            "Assistente desktop modular em Python (PyQt5 + QThread + SQLite) no BIA4vs."
           ]
         },
         {
-          num: "03 // FERRAMENTAS",
-          title: "Ferramentas, Desktop & Automação",
+          num: "03 // DESKTOP & BASE",
+          title: "Desktop & Fundamentos",
           items: [
-            "Python (assistente desktop BIA4vs) e fundamentos em C (C11).",
-            "Interfaces desktop em JavaFX (Gestão de Frotas) e Discord JDA + IMAP.",
-            "Git e GitHub, ambiente Linux e Apache Maven."
+            "Interfaces desktop em JavaFX e telemetria simulada no Gestão de Frotas.",
+            "Algoritmos, estruturas de dados, álgebra linear e fundamentos em C (C11).",
+            "Git, GitHub Actions, ambiente Linux e Apache Maven."
           ]
         }
       ];
@@ -120,12 +120,12 @@ export function renderHomeSection(profile) {
 
             <div class="hero-stats-row">
               <div class="hero-stat-item">
-                <div class="hero-stat-val"><span>3º</span> ${isEn ? "Sem." : "Período"}</div>
-                <span class="hero-stat-lbl">Eng. Computação @ UFG</span>
+                <div class="hero-stat-val"><span>UFG</span></div>
+                <span class="hero-stat-lbl">${isEn ? "Computer Engineering" : "Eng. da Computação"}</span>
               </div>
               <div class="hero-stat-item">
-                <div class="hero-stat-val"><span>5</span> ${isEn ? "Repos" : "Repositórios"}</div>
-                <span class="hero-stat-lbl">${isEn ? "Public on GitHub" : "Públicos no GitHub"}</span>
+                <div class="hero-stat-val"><span>4</span> ${isEn ? "Projects" : "Projetos"}</div>
+                <span class="hero-stat-lbl">${isEn ? "Featured Systems" : "Sistemas em Destaque"}</span>
               </div>
               <div class="hero-stat-item">
                 <div class="hero-stat-val"><span>6h</span>/dia</div>

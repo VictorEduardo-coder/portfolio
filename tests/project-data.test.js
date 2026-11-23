@@ -18,7 +18,7 @@ assert.equal(fs.existsSync(path.resolve("public/images/profile.webp")), true);
 assert.equal(fs.existsSync(path.resolve("public/documents/resume.pdf")), true);
 
 const validStatuses = new Set(Object.keys(projectsData.statusLabels["pt-BR"]));
-assert.equal(projectsData.projects.length, 5);
+assert.equal(projectsData.projects.length, 4);
 
 for (const project of projectsData.projects) {
   assert.ok(project.id);

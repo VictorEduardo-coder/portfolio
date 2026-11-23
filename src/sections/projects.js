@@ -6,60 +6,60 @@ const FLAGSHIP_LAYERS = {
     {
       id: "L0",
       pill: "L0: Persistência SQL & Nuvem",
-      title: "CAMADA 00 // PERSISTÊNCIA RELACIONAL & NUVEM (AIVEN / SQLITE)",
-      desc: "Modelagem relacional normalizada com chaves estrangeiras e isolamento de credenciais. Utilizada no SystemRPG / ZERO RPG (banco remoto na Aiven) e no Gestão de Frotas (persistência embarcada SQLite).",
-      tags: ["MySQL / PostgreSQL", "SQLite", "Aiven Cloud", "JDBC / JPA"]
+      title: "CAMADA 00 // PERSISTÊNCIA RELACIONAL (MYSQL, POSTGRESQL, H2 & SQLITE)",
+      desc: "Modelagem relacional normalizada com chaves estrangeiras e credenciais isoladas via variáveis de ambiente. Utilizada no SystemRPG (MySQL / TiDB Cloud), Bot Acadêmico (PostgreSQL e H2 local), Gestão de Frotas e BIA4vs (SQLite).",
+      tags: ["MySQL / TiDB Cloud", "PostgreSQL", "H2 & SQLite", "JDBC / JPA"]
     },
     {
       id: "L1",
       pill: "L1: Domínio & Regras Java",
-      title: "CAMADA 01 // REGRAS DE NEGÓCIO & MOTOR ECONÔMICO",
-      desc: "Isolamento da lógica de domínio em serviços dedicados: validação do fluxo de moedas (R$, G, TR), Status do Hardware e Corrupção no SystemRPG; priorização com Problema da Mochila no Bot Acadêmico; e entidades de veículos/sensores no Gestão de Frotas.",
-      tags: ["Java", "Spring Boot", "POO", "Programação Dinâmica"]
+      title: "CAMADA 01 // REGRAS DE NEGÓCIO, ECONOMIA & PRIORIZAÇÃO",
+      desc: "Isolamento da lógica de domínio em serviços dedicados: fluxo de moedas (R$, G, TR), Status de Realidade e Corrupção no SystemRPG; alocação de blocos de 50 min via PriorityQueue no Bot Acadêmico; e entidades de veículos/sensores no Gestão de Frotas.",
+      tags: ["Java 21", "Spring Boot", "PriorityQueue", "POO & Camadas"]
     },
     {
       id: "L2",
-      pill: "L2: Integração REST, JDA & IMAP",
-      title: "CAMADA 02 // CONTRATOS DE API, WORKERS ASSÍNCRONOS & IA",
-      desc: "Exposição de rotas REST estruturadas em JSON, workers assíncronos para leitura de e-mails acadêmicos por IMAP no Discord (JDA) e leitura paralela de múltiplos anexos no assistente desktop BIA4vs.",
-      tags: ["REST JSON", "Discord JDA", "Protocolo IMAP", "Python BIA4vs"]
+      pill: "L2: APIs, WebSockets & IMAP",
+      title: "CAMADA 02 // CONTRATOS HTTP, TEMPO REAL & WORKERS ASSÍNCRONOS",
+      desc: "Endpoints HTTP com Spring Boot e Javalin, sincronização de rolagens em tempo real via WebSockets, leitura periódica de e-mails acadêmicos via IMAP para o Discord (JDA) e worker assíncrono em QThread no BIA4vs.",
+      tags: ["REST / Javalin", "WebSockets", "Discord JDA + IMAP", "Python QThread"]
     },
     {
       id: "L3",
-      pill: "L3: Clientes Nativos & Segurança",
-      title: "CAMADA 03 // INTERFACES REATIVAS (COMPOSE / JAVAFX) & SEGURANÇA",
-      desc: "Interfaces nativas em Kotlin/Jetpack Compose no Guardião Mobile (monitoramento de RAM, downloads automáticos e Firewall VPN) e painéis de Operador/Motorista em JavaFX no Gestão de Frotas.",
-      tags: ["Kotlin & Compose", "JavaFX", "VPN Local Android", "Auditoria & Segurança"]
+      pill: "L3: Interfaces & Segurança",
+      title: "CAMADA 03 // VIEWS WEB/DESKTOP, SEGURANÇA & CONTAINERIZAÇÃO",
+      desc: "Autenticação com Spring Security e hash BCrypt, criptografia AES-GCM para credenciais IMAP, interfaces web em Thymeleaf, clientes desktop em JavaFX e PyQt5, além de builds multi-stage com Docker.",
+      tags: ["Spring Security & BCrypt", "AES-GCM", "JavaFX & PyQt5", "Docker"]
     }
   ],
   "en": [
     {
       id: "L0",
       pill: "L0: SQL & Cloud Persistence",
-      title: "LAYER 00 // RELATIONAL PERSISTENCE & CLOUD (AIVEN / SQLITE)",
-      desc: "Normalized relational schemas with foreign keys and credential isolation. Applied in SystemRPG / ZERO RPG (managed cloud database on Aiven) and Fleet Management (embedded SQLite).",
-      tags: ["MySQL / PostgreSQL", "SQLite", "Aiven Cloud", "JDBC / JPA"]
+      title: "LAYER 00 // RELATIONAL PERSISTENCE (MYSQL, POSTGRESQL, H2 & SQLITE)",
+      desc: "Normalized relational schemas with foreign keys and environment-based credential isolation. Applied in SystemRPG (MySQL / TiDB Cloud), Academic Bot (PostgreSQL & local H2), Fleet Management, and BIA4vs (SQLite).",
+      tags: ["MySQL / TiDB Cloud", "PostgreSQL", "H2 & SQLite", "JDBC / JPA"]
     },
     {
       id: "L1",
       pill: "L1: Java Domain & Rules",
-      title: "LAYER 01 // DOMAIN LOGIC & ECONOMY ENGINE",
-      desc: "Domain rules isolated inside dedicated service layers: currency validation (R$, G, TR), Hardware Reality and Corruption in SystemRPG; 0/1 Knapsack study prioritization in Academic Bot; and vehicle/sensor entities in Fleet Management.",
-      tags: ["Java", "Spring Boot", "OOP", "Dynamic Programming"]
+      title: "LAYER 01 // DOMAIN LOGIC, ECONOMY & SCHEDULING",
+      desc: "Domain rules isolated inside dedicated service classes: currency validation (R$, G, TR), Reality Status, and Corruption in SystemRPG; 50-min study block allocation via PriorityQueue in Academic Bot; and vehicle/sensor models in Fleet Management.",
+      tags: ["Java 21", "Spring Boot", "PriorityQueue", "Layered OOP"]
     },
     {
       id: "L2",
-      pill: "L2: REST, JDA & IMAP Integration",
-      title: "LAYER 02 // API CONTRACTS, ASYNC WORKERS & AI",
-      desc: "Structured JSON REST endpoints, asynchronous background workers polling IMAP academic emails for Discord (JDA), and parallel multi-attachment reading in the BIA4vs Python desktop assistant.",
-      tags: ["REST JSON", "Discord JDA", "IMAP Protocol", "Python BIA4vs"]
+      pill: "L2: APIs, WebSockets & IMAP",
+      title: "LAYER 02 // HTTP CONTRACTS, REAL-TIME & ASYNC WORKERS",
+      desc: "HTTP endpoints built with Spring Boot and Javalin, real-time dice roll synchronization over WebSockets, scheduled IMAP polling for Discord (JDA), and non-blocking QThread workers in BIA4vs.",
+      tags: ["REST / Javalin", "WebSockets", "Discord JDA + IMAP", "Python QThread"]
     },
     {
       id: "L3",
-      pill: "L3: Native Clients & Security",
-      title: "LAYER 03 // REACTIVE INTERFACES (COMPOSE / JAVAFX) & SECURITY",
-      desc: "Native interfaces built with Kotlin/Jetpack Compose in Guardião Mobile (RAM monitoring, automatic folder downloads, local VPN) and Operator/Driver JavaFX panels in Fleet Management.",
-      tags: ["Kotlin & Compose", "JavaFX", "Android Local VPN", "Security Auditing"]
+      pill: "L3: Interfaces & Security",
+      title: "LAYER 03 // WEB/DESKTOP UI, SECURITY & CONTAINERIZATION",
+      desc: "Spring Security authentication with BCrypt hashing, AES-GCM encryption for IMAP credentials, Thymeleaf web templates, JavaFX & PyQt5 desktop interfaces, and multi-stage Docker builds.",
+      tags: ["Spring Security & BCrypt", "AES-GCM", "JavaFX & PyQt5", "Docker"]
     }
   ]
 };
@@ -104,6 +104,11 @@ export function renderProjectsSection(projectsData, lang) {
     .map((project, idx) => renderProjectCard(project, statusLabels, lang, idx))
     .join("");
 
+  const totalScreens = projectsData.projects.reduce(
+    (acc, p) => acc + (Array.isArray(p.gallery) ? p.gallery.length : 1),
+    0
+  );
+
   const layerPillsHtml = layers
     .map(
       (l, idx) => `
@@ -144,15 +149,15 @@ export function renderProjectsSection(projectsData, lang) {
 
           <div class="flagship-metrics">
             <div class="flagship-metric-cell">
-              <div class="flagship-metric-val">5</div>
-              <div class="flagship-metric-lbl">${isEn ? "PUBLIC GITHUB REPOS" : "REPOSITÓRIOS PÚBLICOS"}</div>
+              <div class="flagship-metric-val">${projectsData.projects.length}</div>
+              <div class="flagship-metric-lbl">${isEn ? "FEATURED PROJECTS" : "PROJETOS EM DESTAQUE"}</div>
             </div>
             <div class="flagship-metric-cell">
-              <div class="flagship-metric-val">1</div>
-              <div class="flagship-metric-lbl">${isEn ? "NATIVE ANDROID APP" : "APP ANDROID NATIVO"}</div>
+              <div class="flagship-metric-val">Java &amp; Py</div>
+              <div class="flagship-metric-lbl">${isEn ? "CORE BACKEND STACK" : "STACK PRINCIPAL"}</div>
             </div>
             <div class="flagship-metric-cell">
-              <div class="flagship-metric-val">17</div>
+              <div class="flagship-metric-val">${totalScreens}</div>
               <div class="flagship-metric-lbl">${isEn ? "VERIFIED SCREENS" : "TELAS & DIAGRAMAS"}</div>
             </div>
             <div class="flagship-metric-cell">

@@ -5,7 +5,7 @@
   "fullName": "Victor Eduardo Almeida dos Santos",
   "title": "Computer Engineering Student | Backend & Software Engineering",
   "institution": "Federal University of Goiás (UFG)",
-  "degree": "B.Sc. in Computer Engineering (3rd semester in progress)",
+  "degree": "B.Sc. in Computer Engineering",
   "period": "August/2025 – December/2030 (expected)",
   "location": "Aparecida de Goiânia — GO, Brazil",
   "goal": "Software Engineering Internship Opportunity",
@@ -13,7 +13,7 @@
   "availabilityBadge": "Available for Internship (up to 6h/day)",
   "profileImage": "./public/images/profile.webp",
   "profileImageAlt": "Victor Eduardo profile photo",
-  "summary": "3rd-semester Computer Engineering student at UFG building personal projects in backend development (Java & Spring Boot), native Android apps (Kotlin & Jetpack Compose), and Python tooling. My repositories cover REST APIs, relational data modeling, IMAP integration, simulated telemetry, and cloud deployment. Seeking a Software Engineering internship to apply this practical foundation to production code and learn with a team.",
+  "summary": "Computer Engineering undergraduate at UFG focused on backend development (Java & Spring Boot), relational SQL modeling, workflow automation (Discord JDA & IMAP), and desktop tooling in Python and JavaFX. Seeking a Software Engineering internship to apply this practical foundation in production code and grow alongside an engineering team.",
   "transparencyPrinciple": "Core principle: demonstrate competence with transparency. Planned features are never presented as completed, nor are browser simulations presented as live production services.",
   "contacts": {
     "email": "victoreduardo.alm@gmail.com",
@@ -46,9 +46,9 @@
     "ctaResumeDownload": "Download PDF",
     "terminalHeader": "professional_status.sh",
     "terminalLines": [
-      "degree: B.Sc. Computer Engineering @ UFG (3rd semester)",
+      "degree: B.Sc. Computer Engineering @ UFG",
       "focus: Backend, Software Engineering, Automation & Integration",
-      "core_stack: Java, Spring Boot, Python, C (C11), Kotlin, SQL",
+      "core_stack: Java, Spring Boot, SQL, Python, C (C11), Docker",
       "objective: Software Engineering Internship (up to 6h/day)"
     ]
   },
@@ -57,7 +57,7 @@
       "course": "B.Sc. in Computer Engineering",
       "institution": "Federal University of Goiás (UFG)",
       "period": "August/2025 – December/2030 (expected)",
-      "status": "Currently enrolled in the 3rd semester"
+      "status": "In progress"
     }
   ],
   "experience": [
@@ -67,76 +67,67 @@
       "period": "March/2024 – August/2025",
       "highlights": [
         "Provided technical support and daily troubleshooting across IT and administrative areas.",
-        "Worked across multiple hospital departments, developing strong communication and teamwork."
+        "Worked across multiple hospital departments, developing clear communication and teamwork."
       ]
     }
   ],
   "skills": {
     "backendCloud": {
-      "title": "Backend & Cloud",
+      "title": "Backend, Data & Cloud",
       "items": [
-        "Java",
+        "Java 21",
+        "Spring Boot",
+        "Spring Security",
         "Python",
         "C (C11)",
-        "Spring Boot",
-        "JDBC",
-        "JDA",
         "SQL",
-        "MySQL",
+        "MySQL / TiDB Cloud",
         "PostgreSQL",
         "SQLite",
-        "Aiven",
-        "Railway"
+        "H2",
+        "JDBC",
+        "Javalin",
+        "Docker"
       ]
     },
     "mobileDesktopTools": {
-      "title": "Mobile, Desktop & Tooling",
+      "title": "Desktop, Automation & Tooling",
       "items": [
-        "Kotlin",
-        "Android SDK",
-        "Jetpack Compose",
         "JavaFX",
-        "Gradle",
+        "PyQt5",
+        "Discord JDA",
+        "IMAP",
+        "WebSockets",
+        "Thymeleaf",
+        "Maven",
         "Git & GitHub",
-        "Linux",
-        "IMAP"
+        "Linux"
       ]
     },
     "fundamentals": {
       "title": "Computer Science Fundamentals",
       "items": [
-        "Optimization Algorithms",
-        "Data Structures",
+        "Algorithms & Data Structures",
+        "Scheduling Heuristics",
         "Linear Algebra",
         "Object-Oriented Programming",
-        "Relational Data Modeling"
+        "Relational Data Modeling",
+        "Application Security"
       ]
     },
     "languages": {
-      "title": "Spoken Languages",
+      "title": "Languages",
       "items": [
-        {
-          "name": "Portuguese",
-          "level": "Native"
-        },
-        {
-          "name": "English",
-          "level": "Intermediate"
-        },
-        {
-          "name": "Spanish",
-          "level": "Intermediate"
-        },
-        {
-          "name": "French",
-          "level": "Basic"
-        }
+        { "name": "Portuguese", "level": "Native" },
+        { "name": "English", "level": "Intermediate" },
+        { "name": "Spanish", "level": "Intermediate" },
+        { "name": "French", "level": "Basic" }
       ]
     }
   },
   "aiUsage": {
-    "title": "Transparent Use of AI Tools",
-    "text": "Used as an analytical aid without delegating technical decisions; all generated code is rigorously validated. Audited projects by mapping security and logic flaws, executing a security-focused refactoring plan (transactions, layered separation), and generating technical documentation."
+    "title": "Critical Use of AI Tools",
+    "text": "AI tools are used as analytical support for architecture reviews, vulnerability diagnostics, and technical documentation—always backed by manual verification, automated tests, and direct understanding of every change."
   },
   "engineering": {
     "title": "Engineering Profile & Technical Decisions",
@@ -144,43 +135,35 @@
     "topics": [
       {
         "title": "Backend Development & Layered Architecture",
-        "concept": "Separation of concerns across presentation/controllers, business rules, and data persistence layers (DAO/Repositories).",
+        "concept": "Separation of concerns across controllers/views, domain rules, and data persistence layers (DAO/Repositories).",
         "whereUsed": "SystemRPG (ZERO RPG) and Fleet Management & Telemetry.",
-        "problemSolved": "Prevents tight coupling between JavaFX views or REST endpoints and SQL queries.",
-        "decision": "Isolate domain rules inside dedicated service classes and keep database operations parameterized.",
-        "learning": "Continuously improving standardized exception handling, transactions, and Maven project organization."
+        "problemSolved": "Prevents tight coupling between web/JavaFX views and SQL queries.",
+        "decision": "Isolate domain rules inside dedicated service classes and keep SQL queries and environment config parameterized.",
+        "learning": "Continuously improving exception handling standards, transactional boundaries, and Maven/Docker packaging."
       },
       {
-        "title": "REST APIs, Economy Engine & Relational Modeling",
-        "concept": "HTTP contracts paired with normalized SQL schemas and transactional rule validation.",
-        "whereUsed": "SystemRPG (Java 21, Spring Boot, Spring Security, JDBC, MySQL) and Fleet Management (SQLite).",
-        "problemSolved": "Automating character sheets, live dice rolls, hardware reality status, corruption levels, and multi-currency economy flows (R$, G, TR).",
-        "decision": "Validate attribute distribution, skills, and currency balances server-side prior to cloud persistence.",
-        "learning": "Completed role-based access control (PLAYER, MESTRE, ADMIN), CSRF protection, ownership validation (IDOR prevention), @Transactional persistence, and automated JUnit 5 + MockMvc + H2 tests."
+        "title": "Security, Economy Engine & Relational Modeling",
+        "concept": "Secure authentication, normalized SQL schemas with referential integrity, and real-time communication.",
+        "whereUsed": "SystemRPG (Java 21, Spring Boot, Spring Security, MySQL / TiDB Cloud, WebSockets).",
+        "problemSolved": "Automating character sheets, live dice rolls, Reality status, corruption levels, and multi-currency economy flows (R$, G, TR) with Player and Game Master roles.",
+        "decision": "Hash passwords with BCrypt, load secrets from environment variables, and validate domain calculations server-side.",
+        "learning": "Repository secret hygiene, environment-driven application.properties, and multi-stage Docker containerization."
       },
       {
         "title": "Asynchronous Processing & System Integration",
-        "concept": "Background workers and concurrent reading of multiple file attachments and external protocols.",
-        "whereUsed": "Academic Bot (Java, Discord JDA, IMAP) and 4BIAVS / BIA4vs (Python).",
-        "problemSolved": "Asynchronous polling of academic emails via IMAP and parallel attachment reading for code analysis without blocking the UI.",
-        "decision": "Decouple IMAP polling and context processing into independent worker threads.",
-        "learning": "Stabilizing the web search routine in BIA4vs and refining IMAP reconnection handling."
+        "concept": "Background workers, external protocol integration, and encrypted storage of user credentials.",
+        "whereUsed": "Academic Bot (Java, Discord JDA, Javalin, IMAP, AES-GCM) and BIA4vs (Python, PyQt5, QThread).",
+        "problemSolved": "Scheduled academic email polling via IMAP, automated Discord alerts, and multi-file code analysis without freezing the desktop UI.",
+        "decision": "Decouple network I/O into dedicated schedulers/worker threads and encrypt IMAP credentials with AES-GCM before database storage.",
+        "learning": "Seamless switching between PostgreSQL in production and embedded H2 locally, plus offline static analysis fallback in BIA4vs."
       },
       {
-        "title": "Algorithms, Data Structures & Optimization",
-        "concept": "Applying classic data structures (stacks, queues, linear/binary search, QuickSort, and dynamic programming) to practical problems.",
-        "whereUsed": "Academic Bot (priority study block distribution using the 0/1 Knapsack Problem) and UFG coursework.",
-        "problemSolved": "Optimal allocation of study tasks within a limited daily time budget.",
-        "decision": "Model tasks with weight (estimated hours) and value (priority/deadline) for deterministic optimization.",
-        "learning": "Completing the integration of the 0/1 Knapsack optimizer into interactive Discord commands."
-      },
-      {
-        "title": "Application Security & Mobile/Desktop Development",
-        "concept": "Reactive native UIs, role-based authentication, and strict adherence to OS permission sandboxes.",
-        "whereUsed": "Guardião Mobile (Kotlin, Jetpack Compose, Android SDK) and Fleet Management (JavaFX).",
-        "problemSolved": "RAM/background app monitoring, automatic folder-routed downloads, local VPN on Android, and operator/driver panels on desktop.",
-        "decision": "Distinguish system vs. user apps on Android and enforce role-based authentication on desktop with ongoing BCrypt hashing migration.",
-        "learning": "Developing the experimental antivirus scanner on Android while respecting OS sandbox constraints."
+        "title": "Algorithms, Data Structures & Study Scheduling",
+        "concept": "Practical use of priority queues, sorting, search, and dynamic programming for scheduling problems.",
+        "whereUsed": "Academic Bot (PriorityQueue-based OptimizerService) and the interactive Algorithm Lab.",
+        "problemSolved": "Allocating weekly 50-minute study blocks weighted by subject difficulty, credits/weight, and upcoming exam urgency.",
+        "decision": "Combine subject priority and event urgency into a PriorityQueue to greedily assign available weekday slots.",
+        "learning": "Comparing greedy heuristics (PriorityQueue) against exact optimization (0/1 Knapsack) depending on problem constraints."
       }
     ]
   },

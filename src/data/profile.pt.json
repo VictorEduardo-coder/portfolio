@@ -5,15 +5,15 @@
   "fullName": "Victor Eduardo Almeida dos Santos",
   "title": "Estudante de Engenharia da Computação | Backend & Engenharia de Software",
   "institution": "Universidade Federal de Goiás (UFG)",
-  "degree": "Bacharelado em Engenharia da Computação (cursando 3º período)",
-  "period": "Agosto/2025 – Dezembro/2030 (previsão informada)",
+  "degree": "Bacharelado em Engenharia da Computação",
+  "period": "Agosto/2025 – Dezembro/2030 (previsão de conclusão)",
   "location": "Aparecida de Goiânia — GO, Brasil",
-  "goal": "Oportunidade de estágio em Engenharia de Software",
+  "goal": "Oportunidade de estágio em Desenvolvimento de Software",
   "availability": "Disponibilidade de até 6 horas por dia",
   "availabilityBadge": "Disponível para estágio (até 6h/dia)",
   "profileImage": "./public/images/profile.webp",
   "profileImageAlt": "Foto de perfil de Victor Eduardo",
-  "summary": "Estudante do 3º período de Engenharia da Computação na UFG, com projetos próprios em backend (Java e Spring Boot), aplicativos Android nativos (Kotlin e Jetpack Compose) e ferramentas em Python. Meus repositórios cobrem APIs, modelagem relacional, integração por IMAP, telemetria simulada e deploy em nuvem. Busco estágio em Engenharia de Software para aplicar essa base prática em código de produção e aprender com um time.",
+  "summary": "Graduando em Engenharia da Computação na UFG, com foco em desenvolvimento backend (Java e Spring Boot), modelagem relacional SQL, automação de rotinas (Discord JDA e IMAP) e ferramentas desktop em Python e JavaFX. Busco estágio em Desenvolvimento de Software para aplicar essa base prática em projetos de produção e aprender com um time de engenharia.",
   "transparencyPrinciple": "Princípio central: demonstrar competência com transparência. Funcionalidades planejadas não são apresentadas como implementadas, nem simulações locais como serviços reais.",
   "contacts": {
     "email": "victoreduardo.alm@gmail.com",
@@ -46,18 +46,18 @@
     "ctaResumeDownload": "Baixar PDF",
     "terminalHeader": "status_profissional.sh",
     "terminalLines": [
-      "curso: Engenharia da Computacao @ UFG (3o periodo)",
+      "curso: Engenharia da Computacao @ UFG",
       "foco: Backend, Engenharia de Software, Automacao & Integracao",
-      "stack_principal: Java, Spring Boot, Python, C (C11), Kotlin, SQL",
-      "objetivo: Estagio em Engenharia de Software (ate 6h/dia)"
+      "stack_principal: Java, Spring Boot, SQL, Python, C (C11), Docker",
+      "objetivo: Estagio em Desenvolvimento de Software (ate 6h/dia)"
     ]
   },
   "education": [
     {
       "course": "Bacharelado em Engenharia da Computação",
       "institution": "Universidade Federal de Goiás (UFG)",
-      "period": "Agosto/2025 – Dezembro/2030 (previsão informada)",
-      "status": "Cursando o 3º período"
+      "period": "Agosto/2025 – Dezembro/2030 (previsão de conclusão)",
+      "status": "Em andamento"
     }
   ],
   "experience": [
@@ -67,76 +67,67 @@
       "period": "Março/2024 – Agosto/2025",
       "highlights": [
         "Suporte técnico e resolução de problemas do dia a dia nas áreas de TI e administrativa.",
-        "Atuação em diferentes setores, desenvolvendo comunicação e trabalho em equipe."
+        "Atuação em diferentes setores, desenvolvendo comunicação clara e trabalho em equipe."
       ]
     }
   ],
   "skills": {
     "backendCloud": {
-      "title": "Backend e Nuvem",
+      "title": "Backend, Dados & Nuvem",
       "items": [
-        "Java",
+        "Java 21",
+        "Spring Boot",
+        "Spring Security",
         "Python",
         "C (C11)",
-        "Spring Boot",
-        "JDBC",
-        "JDA",
         "SQL",
-        "MySQL",
+        "MySQL / TiDB Cloud",
         "PostgreSQL",
         "SQLite",
-        "Aiven",
-        "Railway"
+        "H2",
+        "JDBC",
+        "Javalin",
+        "Docker"
       ]
     },
     "mobileDesktopTools": {
-      "title": "Mobile, Desktop e Ferramentas",
+      "title": "Desktop, Automação e Ferramentas",
       "items": [
-        "Kotlin",
-        "Android SDK",
-        "Jetpack Compose",
         "JavaFX",
-        "Gradle",
+        "PyQt5",
+        "Discord JDA",
+        "IMAP",
+        "WebSockets",
+        "Thymeleaf",
+        "Maven",
         "Git e GitHub",
-        "Linux",
-        "IMAP"
+        "Linux"
       ]
     },
     "fundamentals": {
       "title": "Fundamentos de Computação",
       "items": [
-        "Algoritmos de otimização",
-        "Estruturas de dados",
+        "Algoritmos e Estruturas de Dados",
+        "Heurísticas de Priorização",
         "Álgebra Linear",
         "Programação Orientada a Objetos",
-        "Modelagem relacional"
+        "Modelagem Relacional",
+        "Segurança de Aplicações"
       ]
     },
     "languages": {
-      "title": "Idiomas Informados",
+      "title": "Idiomas",
       "items": [
-        {
-          "name": "Português",
-          "level": "Nativo"
-        },
-        {
-          "name": "Inglês",
-          "level": "Intermediário"
-        },
-        {
-          "name": "Espanhol",
-          "level": "Intermediário"
-        },
-        {
-          "name": "Francês",
-          "level": "Básico"
-        }
+        { "name": "Português", "level": "Nativo" },
+        { "name": "Inglês", "level": "Intermediário" },
+        { "name": "Espanhol", "level": "Intermediário" },
+        { "name": "Francês", "level": "Básico" }
       ]
     }
   },
   "aiUsage": {
-    "title": "Uso Transparente de Ferramentas de IA",
-    "text": "Utilizada como apoio analítico, sem delegar decisões técnicas; os códigos gerados são validados rigorosamente. Auditei projetos mapeando falhas de segurança e lógica, executando um plano de refatoração focado em segurança (transações, separação de camadas), além de gerar READMEs e documentação técnica."
+    "title": "Uso Crítico de Ferramentas de IA",
+    "text": "Ferramentas de IA são usadas como apoio para revisão de arquitetura, diagnóstico de vulnerabilidades e documentação técnica, sempre com validação manual, testes e entendimento direto do código antes de integrar qualquer mudança."
   },
   "engineering": {
     "title": "Perfil de Engenharia & Decisões Técnicas",
@@ -144,43 +135,35 @@
     "topics": [
       {
         "title": "Desenvolvimento Backend & Arquitetura em Camadas",
-        "concept": "Separação de responsabilidades entre controladores/interface, regras de negócio e persistência de dados (DAO/Repositórios).",
+        "concept": "Separação de responsabilidades entre controladores/views, regras de domínio e persistência de dados (DAO/Repositórios).",
         "whereUsed": "SystemRPG (ZERO RPG) e Gestão de Frotas e Telemetria.",
-        "problemSolved": "Evita acoplamento direto entre telas JavaFX ou endpoints REST e consultas SQL no banco de dados.",
-        "decision": "Isolar regras de domínio em serviços dedicados e manter o acesso a dados parametrizado.",
-        "learning": "Em evolução contínua na padronização de tratamento de exceções, transações e migração estrutural para Maven."
+        "problemSolved": "Evita acoplamento direto entre interfaces web/JavaFX e consultas SQL no banco de dados.",
+        "decision": "Isolar regras de domínio em serviços dedicados e parametrizar consultas SQL e variáveis de ambiente.",
+        "learning": "Evolução contínua na padronização de tratamento de exceções, transações e empacotamento com Maven e Docker."
       },
       {
-        "title": "APIs REST, Motor Econômico & Modelagem Relacional",
-        "concept": "Contratos HTTP e modelagem SQL normalizada com validação transacional de regras de sessão.",
-        "whereUsed": "SystemRPG (Java 21, Spring Boot, Spring Security, JDBC, MySQL) e Gestão de Frotas (SQLite).",
-        "problemSolved": "Automatização de fichas, rolagens ao vivo, status de hardware (Realidade), nível de corrupção e fluxo econômico de moedas (R$, G e TR).",
-        "decision": "Validar os cálculos de atributos, perícias e saldo econômico no servidor antes de persistir no banco remoto.",
-        "learning": "Implementação concluída de RBAC por perfil (PLAYER, MESTRE, ADMIN), proteção CSRF, validação de posse (prevenção de IDOR), transações @Transactional e suíte de testes com JUnit 5, MockMvc e H2."
+        "title": "Segurança, Motor Econômico & Modelagem Relacional",
+        "concept": "Autenticação segura, modelagem SQL com integridade referencial e comunicação em tempo real.",
+        "whereUsed": "SystemRPG (Java 21, Spring Boot, Spring Security, MySQL / TiDB Cloud, WebSockets).",
+        "problemSolved": "Automatização de fichas, rolagens ao vivo, controle de Realidade, nível de corrupção e fluxo de moedas (R$, G e TR) com separação entre Mestre e Jogador.",
+        "decision": "Proteger senhas com BCrypt, isolar credenciais em variáveis de ambiente e validar operações no backend antes de persistir.",
+        "learning": "Boas práticas de higiene de repositório, variáveis de ambiente no application.properties e containerização multi-stage."
       },
       {
         "title": "Processamento Assíncrono & Integração entre Sistemas",
-        "concept": "Execução de workers em segundo plano e leitura concorrente de múltiplos anexos e protocolos externos.",
-        "whereUsed": "Bot Acadêmico (Java, Discord JDA e IMAP) e 4BIAVS / BIA4vs (Python).",
-        "problemSolved": "Leitura assíncrona de e-mails acadêmicos via IMAP e leitura paralela de múltiplos anexos para análise de código sem travar a interface.",
-        "decision": "Desacoplar a rotina de leitura IMAP e o processamento de contexto em threads/workers independentes.",
-        "learning": "Refinando a estabilidade da pesquisa na internet no BIA4vs e o tratamento de reconexão IMAP."
+        "concept": "Workers em segundo plano, leitura de protocolos externos e criptografia de credenciais de usuário.",
+        "whereUsed": "Bot Acadêmico (Java, Discord JDA, Javalin, IMAP, AES-GCM) e BIA4vs (Python, PyQt5, QThread).",
+        "problemSolved": "Leitura periódica de e-mails acadêmicos via IMAP, envio de lembretes agendados no Discord e leitura de múltiplos arquivos de código sem travar a interface desktop.",
+        "decision": "Desacoplar tarefas de rede e I/O em schedulers/threads dedicadas e proteger credenciais IMAP com criptografia AES-GCM antes de gravar no banco.",
+        "learning": "Alternância transparente entre PostgreSQL em produção e H2 local no Bot Acadêmico, e fallback de análise estática offline no BIA4vs."
       },
       {
-        "title": "Algoritmos, Estruturas de Dados & Otimização",
-        "concept": "Aplicação de estruturas clássicas (pilhas, filas, busca linear/binária, QuickSort e programação dinâmica) em problemas reais.",
-        "whereUsed": "Bot Acadêmico (distribuição de blocos de estudo por prioridade com Problema da Mochila) e estudos na UFG.",
-        "problemSolved": "Alocação otimizada de tarefas acadêmicas respeitando o limite diário de horas disponíveis.",
-        "decision": "Modelar cada atividade com peso (tempo estimado) e valor (prioridade/prazo) para seleção determinística.",
-        "learning": "Concluindo a integração do algoritmo da Mochila 0/1 diretamente nos comandos do Discord."
-      },
-      {
-        "title": "Segurança de Aplicações & Desenvolvimento Mobile/Desktop",
-        "concept": "Interfaces nativas reativas, autenticação por perfil operacional e respeito às restrições de sistema operacional.",
-        "whereUsed": "Guardião Mobile (Kotlin, Jetpack Compose, Android SDK) e Gestão de Frotas (JavaFX).",
-        "problemSolved": "Monitoramento de memória RAM/apps em 2º plano, organização automática de downloads em pastas, VPN local no Android e controle de acesso no desktop.",
-        "decision": "Diferenciar apps do sistema vs. usuário no Android e estruturar autenticação por nível no painel de frotas com migração para hash BCrypt.",
-        "learning": "Desenvolvendo o módulo de verificação antivírus no Android respeitando os limites de permissão da plataforma."
+        "title": "Algoritmos, Estruturas de Dados & Alocação de Rotina",
+        "concept": "Aplicação prática de filas de prioridade, ordenação, busca e programação dinâmica em problemas reais.",
+        "whereUsed": "Bot Acadêmico (OptimizerService com PriorityQueue) e laboratório interativo de algoritmos.",
+        "problemSolved": "Distribuição semanal de blocos de estudo de 50 minutos considerando peso da disciplina, dificuldade e urgência de provas/entregas.",
+        "decision": "Combinar prioridade base da disciplina e fator de urgência dos eventos em uma PriorityQueue para alocação determinística nos horários livres.",
+        "learning": "Comparação prática entre heurísticas gulosas (PriorityQueue) e otimização exata (Mochila 0/1) conforme o perfil do problema."
       }
     ]
   },
@@ -193,7 +176,7 @@
   },
   "contactSection": {
     "title": "Contato Profissional & Currículo",
-    "subtitle": "Aberto a oportunidades de estágio em Engenharia de Software (até 6h/dia) e conversas técnicas sobre backend, automação e arquitetura.",
+    "subtitle": "Aberto a oportunidades de estágio em Desenvolvimento de Software (até 6h/dia) e conversas técnicas sobre backend, automação e arquitetura.",
     "ctaEmail": "Enviar E-mail",
     "copyEmail": "Copiar E-mail",
     "copiedFeedback": "E-mail copiado para a área de transferência!"

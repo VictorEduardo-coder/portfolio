@@ -4,12 +4,12 @@ export function renderAboutSection(profile) {
   const isEn = profile.lang === "en";
 
   const narrativeHtml = isEn
-    ? `I am <strong>${escapeHtml(profile.fullName)}</strong> — a software developer and undergraduate pursuing a <span class="inline-highlight">B.Sc. in Computer Engineering at UFG</span> (3rd semester, Aug/2025 – Dec/2030), based in <span class="inline-highlight">${escapeHtml(profile.location)}</span>. My professional foundation includes working as an <span class="inline-highlight">IT &amp; Administrative Apprentice</span> at Santa Casa de Misericórdia de Goiânia (via CESAM, Mar/2024 – Aug/2025), solving daily operational and technical challenges across multiple departments.`
-    : `Sou <strong>${escapeHtml(profile.fullName)}</strong> — desenvolvedor e estudante do <span class="inline-highlight">Bacharelado em Engenharia da Computação na UFG</span> (cursando o 3º período, ago/2025 – dez/2030), localizado em <span class="inline-highlight">${escapeHtml(profile.location)}</span>. Atuei como <span class="inline-highlight">Jovem Aprendiz — Administrativo e TI</span> na Santa Casa de Misericórdia de Goiânia (via CESAM, mar/2024 – ago/2025), realizando suporte técnico, resolução de problemas cotidianos e integração entre diferentes setores.`;
+    ? `I am <strong>${escapeHtml(profile.fullName)}</strong> — a software developer and undergraduate pursuing a <span class="inline-highlight">B.Sc. in Computer Engineering at UFG</span> (Aug/2025 – Dec/2030), based in <span class="inline-highlight">${escapeHtml(profile.location)}</span>. My professional foundation includes working as an <span class="inline-highlight">IT &amp; Administrative Apprentice</span> at Santa Casa de Misericórdia de Goiânia (via CESAM, Mar/2024 – Aug/2025), solving daily operational and technical challenges across multiple departments.`
+    : `Sou <strong>${escapeHtml(profile.fullName)}</strong> — desenvolvedor e graduando do <span class="inline-highlight">Bacharelado em Engenharia da Computação na UFG</span> (ago/2025 – dez/2030), localizado em <span class="inline-highlight">${escapeHtml(profile.location)}</span>. Atuei como <span class="inline-highlight">Jovem Aprendiz — Administrativo e TI</span> na Santa Casa de Misericórdia de Goiânia (via CESAM, mar/2024 – ago/2025), realizando suporte técnico, resolução de problemas cotidianos e integração entre diferentes setores.`;
 
   const narrativeSecondHtml = isEn
-    ? `My technical work centers on building <span class="inline-highlight">Spring Boot REST APIs</span>, <span class="inline-highlight">relational database schemas</span>, <span class="inline-highlight">Kotlin/Jetpack Compose Android apps</span>, and <span class="inline-highlight">Python automation tools</span>. I am seeking a Software Engineering internship (available up to 6 hours/day) to contribute with disciplined engineering and evolve alongside an experienced team.`
-    : `Meus projetos concentram-se na construção de <span class="inline-highlight">APIs REST com Spring Boot</span>, <span class="inline-highlight">modelagem relacional SQL</span>, <span class="inline-highlight">aplicações Android em Kotlin/Compose</span> e <span class="inline-highlight">automação em Python</span>. Busco uma oportunidade de estágio em Engenharia de Software (disponibilidade de até 6h/dia) para aplicar meus conhecimentos e evoluir tecnicamente em equipe.`;
+    ? `My technical work centers on building <span class="inline-highlight">Java &amp; Spring Boot backends</span>, <span class="inline-highlight">relational SQL schemas</span>, <span class="inline-highlight">Discord/IMAP workflow automation</span>, and <span class="inline-highlight">Python &amp; JavaFX desktop applications</span>. I am seeking a Software Engineering internship (available up to 6 hours/day) to contribute with disciplined engineering and evolve alongside an experienced team.`
+    : `Meus projetos concentram-se na construção de <span class="inline-highlight">backends em Java e Spring Boot</span>, <span class="inline-highlight">modelagem relacional SQL</span>, <span class="inline-highlight">automação com Discord JDA e IMAP</span> e <span class="inline-highlight">ferramentas desktop em Python e JavaFX</span>. Busco uma oportunidade de estágio em Desenvolvimento de Software (disponibilidade de até 6h/dia) para aplicar meus conhecimentos em código de produção e evoluir em equipe.`;
 
   const renderSkillGroup = (group, idx) => `
     <div class="card" data-swarm-target="skill-group-${idx}">
@@ -52,7 +52,7 @@ export function renderAboutSection(profile) {
           <div class="card" data-swarm-target="about-pillars">
             <div class="numbered-pillar-row" style="padding-top:0;">
               <div>
-                <h4>${isEn ? " Academic Foundation (UFG)" : "Formação Acadêmica (UFG)"}</h4>
+                <h4>${isEn ? "Academic Foundation (UFG)" : "Formação Acadêmica (UFG)"}</h4>
                 <p style="font-size:0.86rem;margin-top:4px;">${escapeHtml(profile.degree)} — ${escapeHtml(profile.period)}</p>
               </div>
               <span class="numbered-pillar-idx">01</span>

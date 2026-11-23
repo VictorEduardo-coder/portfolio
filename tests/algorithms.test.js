@@ -49,10 +49,10 @@ assert.equal(createValid.responseBody.created.character, "Vex");
 
 const sampleProjects = [
   { id: "p1", category: "backend", status: "optimization", technologies: ["Java", "Spring Boot"] },
-  { id: "p2", category: "mobile", status: "development", technologies: ["Kotlin"] }
+  { id: "p2", category: "ai", status: "development", technologies: ["Python", "PyQt5"] }
 ];
 assert.equal(filterProjectsList(sampleProjects, "backend", "all", "all").length, 1);
-assert.equal(filterProjectsList(sampleProjects, "all", "Kotlin", "development").length, 1);
-assert.equal(filterProjectsList(sampleProjects, "backend", "Kotlin", "all").length, 0);
+assert.equal(filterProjectsList(sampleProjects, "all", "Python", "development").length, 1);
+assert.equal(filterProjectsList(sampleProjects, "backend", "Python", "all").length, 0);
 
 console.log("All algorithm, API simulator, and project filter tests passed.");
