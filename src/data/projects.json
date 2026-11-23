@@ -235,8 +235,8 @@
       "name_en": "Fleet Management & Telemetry — Desktop Application",
       "category": "desktop",
       "status": "specification",
-      "technologies": ["Java", "JavaFX", "PostgreSQL", "SQLite"],
-      "repository": null,
+      "technologies": ["Java", "JavaFX", "PostgreSQL", "JDBC"],
+      "repository": "https://github.com/VictorEduardo-coder/Gestao-de-Frotas",
       "image": "./public/images/projects/gestao-frotas.webp",
       "gallery": [
         {
@@ -277,44 +277,44 @@
       ],
       "demo": null,
       "pt": {
-        "summary": "Aplicação desktop em Java e JavaFX para gestão de veículos, vínculo de sensores de telemetria e painéis dedicados para Operador e Motorista.",
-        "problem": "Gerenciar o ciclo de vida de uma frota (automóveis e drones), associando dispositivos de telemetria e oferecendo diagnóstico visual.",
-        "role": "Arquitetura orientada a objetos em Java, interfaces desktop em JavaFX, persistência relacional e plano de refatoração.",
+        "summary": "Aplicação desktop em Java 17+, JavaFX e PostgreSQL (JDBC) para gestão de veículos, vínculo de sensores de telemetria e controle de acesso por perfil (RBAC).",
+        "problem": "Gerenciar o ciclo de vida de uma frota, associando sensores de telemetria, rastreamento GPS e níveis de permissão em painéis dedicados.",
+        "role": "Desenvolvimento backend em Java (POO, RBAC, camada DAO JDBC com PostgreSQL) no projeto acadêmico em equipe da UFG.",
         "implemented": [
-          "Tela de Login e roteamento de sessão para Painel do Operador/Instalador e Área do Motorista.",
-          "Cadastro e remoção de veículos (Placa/ID) e vínculo com usuários condutores.",
-          "Interface de vínculo de dispositivos de telemetria (RPM, GPS, velocidade, portas) por veículo.",
-          "Painel do Motorista com abas de diagnóstico, velocímetro digital e varredura simulada de sinal."
+          "Modelagem OOP com hierarquia de usuários (Gestor, Operador, Equipe, Cliente, Instalador), enum RBAC (PerfilAcesso) e record imutável Localizacao.",
+          "Telas JavaFX com login e painéis distintos para Administrador, Operador/Instalador e Cliente/Motorista.",
+          "Cadastro de veículos (Placa/ID), vínculo com condutores, associação de sensores e registro de logs em PostgreSQL.",
+          "Conexão JDBC parametrizada por variáveis de ambiente (DB_URL, DB_USER e DB_PASS) sem credenciais fixas no código."
         ],
         "inProgress": [
-          "Refatoração para separação estrita em camadas e remoção de arquivos legados antes da publicação aberta.",
-          "Substituição do fluxo de autenticação de demonstração por hash BCrypt e padronização de build em Maven."
+          "Migração da autenticação de demonstração para hash BCrypt e segundo fator real.",
+          "Padronização de empacotamento e gestão de dependências com Apache Maven (pom.xml)."
         ],
         "nextSteps": [
-          "Testes integrados da camada de persistência após conclusão da refatoração.",
-          "Publicação do repositório no GitHub após revisão de segurança."
+          "Criar suíte de testes unitários com JUnit 5 para RBAC e camada repository/.",
+          "Adicionar simulador configurável de leitura contínua de telemetria."
         ],
-        "limitations": "Repositório mantido privado enquanto a limpeza de arquivos legados, autenticação segura e documentação são finalizadas."
+        "limitations": "Protótipo acadêmico em evolução: senhas de demonstração e token secundário ('000000') ainda estão em fase de substituição por BCrypt e MFA real."
       },
       "en": {
-        "summary": "Java and JavaFX desktop application for managing vehicles, binding telemetry sensors, and providing dedicated Operator and Driver panels.",
-        "problem": "Manage a heterogeneous fleet (cars and drones), associate telemetry devices, and provide real-time visual diagnostics.",
-        "role": "Object-oriented design in Java, JavaFX desktop screens, relational persistence, and architectural refactoring.",
+        "summary": "Desktop application built with Java 17+, JavaFX, and PostgreSQL (JDBC) for fleet management, telemetry sensor binding, and role-based access control (RBAC).",
+        "problem": "Manage fleet lifecycle, telemetry sensor assignments, GPS tracking records, and role-separated operator/driver dashboards.",
+        "role": "Java backend development (OOP domain modeling, RBAC, PostgreSQL JDBC DAO layer) in a UFG team academic project.",
         "implemented": [
-          "Login screen and session routing for Operator/Installer and Driver control panels.",
-          "Vehicle registration/removal (License Plate/ID) and driver user assignment.",
-          "Telemetry sensor binding interface (RPM, GPS, speed, doors) per vehicle.",
-          "Driver Control Panel with digital speedometer and simulated signal diagnostic scan."
+          "OOP hierarchy (Gestor, Operador, Equipe, Cliente, Instalador), RBAC enum (PerfilAcesso), and immutable Localizacao Java record.",
+          "JavaFX desktop screens with role-based dashboards for Administrator, Operator/Installer, and Client/Driver.",
+          "Vehicle registration (License Plate/ID), driver assignment, telemetry sensor binding, and PostgreSQL audit logs.",
+          "Environment-driven JDBC configuration (DB_URL, DB_USER, DB_PASS) with no hardcoded credentials."
         ],
         "inProgress": [
-          "Strict layered refactoring and removal of legacy files prior to public release.",
-          "Replacing demo authentication with BCrypt hashing and standardizing the Maven build."
+          "Migrating prototype authentication to BCrypt password hashing and real multi-factor validation.",
+          "Standardizing build layout and dependency management with Apache Maven (pom.xml)."
         ],
         "nextSteps": [
-          "Automated persistence tests once refactoring is complete.",
-          "Public GitHub release following final security review."
+          "Add JUnit 5 unit tests covering RBAC rules and the repository/ DAO layer.",
+          "Add a configurable continuous telemetry feed simulator."
         ],
-        "limitations": "Repository is kept private while legacy cleanup, secure authentication, and documentation are being finalized."
+        "limitations": "Evolving academic prototype: demo password comparison and fixed secondary token ('000000') are scheduled for replacement with BCrypt and real MFA."
       },
       "demoUrl": null
     }
