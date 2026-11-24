@@ -36,9 +36,9 @@
       "name_en": "SystemRPG (ZERO RPG) — Character Sheet & Rules Engine",
       "category": "backend",
       "status": "optimization",
-      "technologies": ["Java", "Spring Boot", "Spring Security", "MySQL", "WebSocket", "Thymeleaf", "Docker"],
+      "technologies": ["Java", "Spring Boot", "Spring Security", "MySQL", "WebSocket", "Thymeleaf", "Docker", "JUnit 5", "CI/CD"],
       "repository": "https://github.com/VictorEduardo-coder/SystemRPG",
-      "image": "./public/images/projects/systemrpg.webp",
+      "image": "./public/images/projects/systemrpg-status.webp",
       "gallery": [
         {
           "src": "./public/images/projects/systemrpg-status.webp",
@@ -66,48 +66,48 @@
           "captionEn": "ZERO RPG Authentication and account registration screen"
         }
       ],
-      "demo": null,
+      "demo": "api-simulator",
       "pt": {
-        "summary": "Aplicação web e backend em Java 21 e Spring Boot 3.2 para gerenciamento de fichas, inventário, classes, economia interna e rolagens de dados em tempo real do sistema autoral ZERO RPG.",
+        "summary": "Aplicação web e backend em Java 21 e Spring Boot 3.2 para gerenciamento de fichas, inventário, classes, economia interna e rolagens de dados em tempo real, com hardening anti-IDOR/CSRF e 18/18 testes automatizados em CI.",
         "problem": "Centralizar regras matemáticas, cálculos de atributos/perícias, estado de Realidade, nível de corrupção e rolagens ao vivo em sessões de RPG.",
-        "role": "Desenvolvimento backend em Java/Spring Boot, modelagem relacional MySQL / TiDB Cloud, interface web em Thymeleaf e containerização com Docker (Render).",
+        "role": "Desenvolvimento backend em Java/Spring Boot, segurança de aplicação (anti-IDOR, CSRF, BCrypt), modelagem relacional MySQL / TiDB Cloud, testes JUnit 5/MockMvc e Docker.",
         "implemented": [
-          "Autenticação com Spring Security e senhas protegidas por hash BCrypt, diferenciando fluxos de Jogador e Mestre.",
-          "Gerenciamento completo de fichas, atributos, perícias, classes base/híbridas, habilidades, inventário e manual de regras.",
+          "Segurança com Spring Security, hash BCrypt, proteção CSRF ativa e AutorizacaoService anti-IDOR validando posse de fichas/itens pelo SecurityContext (403/404) e segregação de rotas MESTRE/ADMIN.",
+          "18/18 testes automatizados (JUnit 5 + MockMvc + H2) cobrindo segurança de rotas, anti-IDOR, domínio e WebSockets, executados continuamente via GitHub Actions CI.",
+          "Gerenciamento completo de fichas, atributos, perícias, classes base/híbridas, habilidades, inventário, economia multi-moeda (R$, G, TR) e manual de regras.",
           "Rolagens de dados em tempo real sincronizadas via WebSockets entre os participantes da sessão.",
-          "Modelagem relacional MySQL com schema documentado (schema.sql e sys.csv) e credenciais carregadas via variáveis de ambiente.",
-          "Build containerizado multi-stage com Docker (Maven + Eclipse Temurin 21) e blueprint de deploy para Render."
+          "Modelagem relacional MySQL com diagrama ER/schema documentado (schema.sql e sys.csv), variáveis de ambiente e build multi-stage Docker (Render)."
         ],
         "inProgress": [
-          "Ampliação da camada Service e introdução de DTOs para desacoplar ainda mais regras de domínio dos Controllers e DAOs.",
-          "Padronização de tratamento global de exceções (@ControllerAdvice) e ampliação da cobertura de testes automatizados."
+          "Ampliação da camada Service e introdução de DTOs para desacoplar ainda mais regras de domínio dos Controllers.",
+          "Padronização de tratamento global de exceções (@ControllerAdvice) com respostas padronizadas."
         ],
         "nextSteps": [
-          "Documentação interativa dos endpoints com OpenAPI / Swagger.",
-          "Pipeline CI no GitHub Actions para build e execução contínua de testes."
+          "Documentação interativa dos endpoints REST com OpenAPI / Swagger.",
+          "Publicação de ambiente demonstrativo com dados fictícios para inspeção ao vivo."
         ],
-        "limitations": "Sem demonstração online pública no momento. A aplicação executa localmente na porta 4000 via Maven ou Docker conectada ao MySQL."
+        "limitations": "Sem instância pública permanentemente hospedada no momento. Executa localmente na porta 4000 via Maven ou Docker (com suporte a H2 em memória para testes)."
       },
       "en": {
-        "summary": "Web and backend application built with Java 21 and Spring Boot 3.2 for managing character sheets, inventory, classes, internal economy, and live dice rolls for the original ZERO RPG system.",
+        "summary": "Web and backend application built with Java 21 and Spring Boot 3.2 for managing character sheets, inventory, classes, internal economy, and live dice rolls—featuring anti-IDOR/CSRF hardening and 18/18 automated CI tests.",
         "problem": "Centralize domain rules, attribute/skill calculations, Reality status, corruption tracking, and live dice rolls during RPG sessions.",
-        "role": "Backend engineering with Java/Spring Boot, relational MySQL / TiDB Cloud modeling, Thymeleaf web UI, and Docker containerization (Render).",
+        "role": "Backend engineering with Java/Spring Boot, application security (anti-IDOR, CSRF, BCrypt), relational MySQL / TiDB Cloud modeling, JUnit 5/MockMvc testing, and Docker.",
         "implemented": [
-          "Spring Security authentication with BCrypt password hashing and separated Player and Game Master dashboards.",
-          "Full management of character sheets, base/hybrid classes, skills, inventory, and integrated rulebook.",
+          "Spring Security authentication with BCrypt hashing, active CSRF protection, and centralized AutorizacaoService anti-IDOR ownership checks via SecurityContext (403/404) plus MESTRE/ADMIN route isolation.",
+          "18/18 automated JUnit 5 + MockMvc + H2 tests covering security routes, anti-IDOR, domain rules, and WebSockets, running on GitHub Actions CI.",
+          "Full management of character sheets, base/hybrid classes, skills, inventory, multi-currency economy (R$, G, TR), and integrated rulebook.",
           "Real-time dice roll broadcasting synchronized via WebSockets.",
-          "Relational MySQL modeling with documented schema (schema.sql and sys.csv) and environment-driven configuration.",
-          "Multi-stage Docker build (Maven + Eclipse Temurin 21) and Render deployment blueprint."
+          "Relational MySQL modeling with ER diagram and documented schema (schema.sql, sys.csv), environment-driven config, and multi-stage Docker build (Render)."
         ],
         "inProgress": [
-          "Expanding the Service layer and DTOs to further decouple business logic from Controllers and DAOs.",
-          "Centralized exception handling (@ControllerAdvice) and broader automated test coverage."
+          "Expanding the Service layer and DTOs to further decouple business logic from Controllers.",
+          "Centralized exception handling (@ControllerAdvice) with consistent error responses."
         ],
         "nextSteps": [
-          "Documenting endpoints with OpenAPI / Swagger.",
-          "Adding a GitHub Actions CI pipeline for automated builds and tests."
+          "Documenting REST endpoints interactively with OpenAPI / Swagger.",
+          "Publishing a seeded sandbox instance for live inspection."
         ],
-        "limitations": "No public live demo is currently hosted. The system runs locally on port 4000 via Maven or Docker backed by MySQL."
+        "limitations": "No permanent public demo is currently hosted. Runs locally on port 4000 via Maven or Docker (and ships with an in-memory H2 profile for automated tests)."
       },
       "demoUrl": null
     },
@@ -116,8 +116,8 @@
       "name": "Bot Acadêmico — Automação de Estudos no Discord",
       "name_en": "Academic Bot — Discord Study Automation",
       "category": "ai",
-      "status": "development",
-      "technologies": ["Java", "JDA", "Javalin", "PostgreSQL", "H2", "IMAP", "Docker"],
+      "status": "optimization",
+      "technologies": ["Java", "JDA", "Javalin", "PostgreSQL", "H2", "IMAP", "Docker", "JUnit 5", "CI/CD"],
       "repository": "https://github.com/VictorEduardo-coder/bot-academico",
       "image": "./public/images/projects/bot-academico.webp",
       "gallery": [
@@ -127,46 +127,48 @@
           "captionEn": "Architecture Diagram: IMAP Reader, Async Worker, Study Routine Optimizer, and Discord Bot (JDA)"
         }
       ],
-      "demo": null,
+      "demo": "algorithm-lab",
       "pt": {
-        "summary": "Backend em Java 17 combinando bot de Discord (JDA), API HTTP com painel web (Javalin), leitura de e-mails acadêmicos via IMAP e alocação de blocos de estudo por fila de prioridade.",
+        "summary": "Backend em Java 17 combinando bot de Discord (JDA), API REST segura (Javalin), leitura de e-mails acadêmicos via IMAP, criptografia AES-256-GCM e 12/12 testes de integração em CI.",
         "problem": "Auxiliar universitários a acompanhar prazos de provas e entregas recebidos por e-mail e organizar blocos semanais de estudo diretamente pelo Discord.",
-        "role": "Desenvolvimento backend em Java com JDA, Javalin, JDBC (PostgreSQL/H2), cliente IMAP, criptografia AES-GCM e heurística de priorização.",
+        "role": "Desenvolvimento backend em Java com JDA, Javalin, JDBC (PostgreSQL/H2), segurança (BCrypt, AES-256-GCM, rate limit, CORS restrito), cliente IMAP e testes JUnit 5.",
         "implemented": [
-          "8 comandos slash no Discord (JDA) para cadastrar/remover disciplinas, consultar calendário, gerar rotina e configurar alertas.",
+          "8 comandos slash no Discord (JDA) para cadastrar/remover disciplinas, consultar calendário, gerar rotina e configurar alertas agendados.",
           "OptimizerService baseado em PriorityQueue que combina peso, dificuldade e urgência dos eventos para alocar blocos de 50 minutos de segunda a sexta.",
-          "API REST e painel web embarcado com Javalin 5.6 protegidos por token de sessão.",
-          "Criptografia AES-GCM (EncryptionService) para credenciais IMAP e persistência automática em PostgreSQL (produção) ou H2 (local)."
+          "API REST e painel web em Javalin 5.6 com autenticação BCrypt persistida, sessões com TTL e logout, rate limit (429), CORS restrito (ALLOWED_ORIGINS) e isolamento por usuário.",
+          "Criptografia obrigatória AES-256-GCM (EncryptionService com chave Base64 versionada v1:) para credenciais IMAP e alternância automática PostgreSQL/H2.",
+          "12/12 testes unitários e de integração HTTP (JUnit 5 + Javalin + H2) cobrindo autenticação, criptografia e alocação de blocos no GitHub Actions CI."
         ],
         "inProgress": [
-          "Refinamento da extração de datas/eventos em diferentes formatos de e-mails acadêmicos via IMAP.",
-          "Ampliação dos testes unitários do OptimizerService e validação de sessões na API HTTP."
+          "Refinamento da extração de datas/eventos em diferentes padrões de e-mails acadêmicos via IMAP.",
+          "Suporte a janelas de disponibilidade personalizadas por usuário na alocação de blocos."
         ],
         "nextSteps": [
-          "Adicionar suporte a horários personalizados por usuário na alocação de blocos de estudo.",
-          "Configurar autenticação robusta com expiração de tokens no painel web."
+          "Integração com exportação de cronograma em formato iCalendar (.ics).",
+          "Monitoramento estruturado de métricas de entrega de alertas."
         ],
-        "limitations": "Em evolução contínua. Nenhuma credencial real ou conteúdo privado de e-mail é versionado; o bot exige DISCORD_TOKEN via variável de ambiente."
+        "limitations": "Nenhuma credencial real ou conteúdo privado de e-mail é versionado; requer DISCORD_TOKEN e ENCRYPTION_KEY via variáveis de ambiente (.env.example incluso)."
       },
       "en": {
-        "summary": "Java 17 backend combining a Discord bot (JDA), a Javalin HTTP API with web dashboard, IMAP academic email monitoring, and PriorityQueue-based study block scheduling.",
+        "summary": "Java 17 backend combining a Discord bot (JDA), hardened Javalin REST API, IMAP academic email monitoring, mandatory AES-256-GCM encryption, and 12/12 CI integration tests.",
         "problem": "Help university students track exam/assignment deadlines from email and organize weekly study blocks directly inside Discord.",
-        "role": "Java backend development with JDA, Javalin, JDBC (PostgreSQL/H2), IMAP client, AES-GCM encryption, and scheduling heuristics.",
+        "role": "Java backend engineering with JDA, Javalin, JDBC (PostgreSQL/H2), security (BCrypt, AES-256-GCM, rate limiting, restricted CORS), IMAP client, and JUnit 5 tests.",
         "implemented": [
-          "8 Discord slash commands (JDA) to manage subjects, inspect upcoming events, generate routines, and configure reminders.",
+          "8 Discord slash commands (JDA) to manage subjects, inspect upcoming events, generate study schedules, and configure automated reminders.",
           "PriorityQueue-based OptimizerService combining subject weight, difficulty, and event urgency to assign 50-minute weekday study blocks.",
-          "Embedded Javalin 5.6 REST API and web interface authenticated via session token.",
-          "AES-GCM encryption (EncryptionService) for IMAP credentials with seamless PostgreSQL (prod) or H2 (local) persistence."
+          "Embedded Javalin 5.6 REST API and web UI with persisted BCrypt authentication, TTL sessions + logout, rate limiting (429), restricted CORS (ALLOWED_ORIGINS), and per-user data isolation.",
+          "Mandatory AES-256-GCM encryption (EncryptionService with versioned v1: Base64 key) for IMAP credentials and seamless PostgreSQL/H2 persistence.",
+          "12/12 JUnit 5 unit and HTTP integration tests (Javalin + H2) running automatically on GitHub Actions CI."
         ],
         "inProgress": [
           "Refining date/event extraction across varied academic email templates via IMAP.",
-          "Expanding unit tests for OptimizerService and hardening HTTP API session validation."
+          "Supporting custom per-user availability windows during study block scheduling."
         ],
         "nextSteps": [
-          "Support custom user availability windows during study block allocation.",
-          "Add expiring token authentication to the web dashboard."
+          "Exporting generated study schedules to iCalendar (.ics).",
+          "Adding structured metrics for scheduled reminder delivery."
         ],
-        "limitations": "Under active refinement. No real credentials or private email contents are tracked; running the bot requires a DISCORD_TOKEN environment variable."
+        "limitations": "No real credentials or private email contents are tracked; requires DISCORD_TOKEN and ENCRYPTION_KEY environment variables (.env.example provided)."
       },
       "demoUrl": null
     },
@@ -175,8 +177,8 @@
       "name": "BIA4vs — Assistente Desktop de Pesquisa e Análise de Código",
       "name_en": "BIA4vs — Desktop Research & Code Analysis Assistant",
       "category": "ai",
-      "status": "development",
-      "technologies": ["Python", "PyQt5", "SQLite"],
+      "status": "optimization",
+      "technologies": ["Python", "PyQt5", "SQLite", "LLMs / Ollama", "CI/CD"],
       "repository": "https://github.com/VictorEduardo-coder/BIA4vs",
       "image": "./public/images/projects/4biavs.webp",
       "gallery": [
@@ -186,46 +188,48 @@
           "captionEn": "BIA4vs Desktop UI in PyQt5: session history management, code file attachments, and Markdown-rendered replies"
         }
       ],
-      "demo": null,
+      "demo": "code-playground",
       "pt": {
-        "summary": "Aplicação desktop modular em Python (PyQt5) voltada para consultas técnicas, revisão passiva de arquivos de código/PDF e persistência local de conversas em SQLite.",
-        "problem": "Oferecer um ambiente desktop leve para anexar arquivos de código, pesquisar referências técnicas e manter histórico local organizado.",
-        "role": "Arquitetura modular em Python (`core`, `code_analysis`, `files`, `interface`, `research`, `storage`), UI em PyQt5 e persistência em SQLite.",
+        "summary": "Aplicação desktop modular em Python (PyQt5) para pesquisa técnica, análise de código com LLMs (Ollama / API compatível OpenAI), scanner de privacidade de segredos e testes automatizados em CI.",
+        "problem": "Oferecer um ambiente desktop leve e seguro para inspecionar arquivos de código, pesquisar referências técnicas e manter histórico local sem vazar credenciais para provedores externos.",
+        "role": "Arquitetura modular em Python, motor de IA desacoplado (AIEngineClient), controles de privacidade/scanner de segredos, PyQt5, SQLite e testes unittest em CI.",
         "implemented": [
-          "Interface escura em PyQt5 com histórico lateral de sessões (criar, renomear e excluir) persistido em SQLite.",
-          "Execução assíncrona em QThread (AIWorker) para manter a interface responsiva durante chamadas externas ou leitura de arquivos.",
-          "Validação e leitura segura de anexos (código, Markdown, JSON, SQL e PDF via pypdf) com limite de 2 MB.",
-          "Pesquisa web sob demanda (duckduckgo-search), suporte a Ollama local via variáveis de ambiente e fallback para diagnóstico estático offline."
+          "Interface escura em PyQt5 com histórico lateral de sessões em SQLite e execução assíncrona via QThread (AIWorker).",
+          "AIEngineClient desacoplado da UI com suporte a endpoints compatíveis com OpenAI, Ollama local, modo somente local (BIA4VS_LOCAL_ONLY), timeout configurável e cancelamento seguro.",
+          "Scanner de segredos (scan_sensitive_content) que detecta chaves privadas, tokens e credenciais hardcoded e bloqueia envio a provedores externos.",
+          "Leitura segura de anexos (código, Markdown, JSON, SQL e PDF via pypdf até 2 MB), pesquisa web sob demanda e fallback para diagnóstico estático offline.",
+          "Suíte de testes automatizados (unittest) cobrindo falhas HTTP 429/500, timeout, privacidade, anexos e SQLite, executada em Python 3.11 e 3.12 no GitHub Actions CI."
         ],
         "inProgress": [
-          "Estabilização das consultas de busca externa e ampliação das regras de diagnóstico estático por linguagem.",
-          "Criação de suíte de testes automatizados para os módulos de leitura de arquivos e persistência SQLite."
+          "Ampliação das regras de diagnóstico estático offline por linguagem (Java, Python, SQL e C).",
+          "Exportação de sessões e relatórios técnicos diretamente em Markdown."
         ],
         "nextSteps": [
-          "Exportação de sessões e relatórios de análise em Markdown.",
-          "Configuração gráfica de modelo/provedor diretamente pela barra superior da aplicação."
+          "Configuração gráfica de provedor/modelo e modo local diretamente pela barra superior.",
+          "Suporte a indexação de pequenos repositórios locais com respeito ao .gitignore."
         ],
-        "limitations": "Projeto em desenvolvimento ativo; a análise é estritamente passiva (não executa nem altera arquivos locais automaticamente)."
+        "limitations": "A análise de arquivos é estritamente passiva (não executa nem modifica código local automaticamente)."
       },
       "en": {
-        "summary": "Modular Python (PyQt5) desktop application built for technical queries, passive source code/PDF inspection, and local SQLite conversation history.",
-        "problem": "Provide a lightweight desktop workspace for attaching source code files, querying technical references, and organizing local session history.",
-        "role": "Modular Python architecture (`core`, `code_analysis`, `files`, `interface`, `research`, `storage`), PyQt5 UI, and SQLite persistence.",
+        "summary": "Modular Python (PyQt5) desktop assistant for technical research and code review with LLMs (Ollama / OpenAI-compatible APIs), built-in secret scanning privacy controls, and automated CI tests.",
+        "problem": "Provide a lightweight, privacy-conscious desktop workspace for inspecting source code, running technical lookups, and keeping local SQLite history without leaking secrets to external providers.",
+        "role": "Modular Python architecture, decoupled AI client (AIEngineClient), secret-scanning privacy controls, PyQt5 UI, SQLite persistence, and CI unittest suite.",
         "implemented": [
-          "Dark PyQt5 desktop UI with sidebar session management (create, rename, delete) backed by SQLite.",
-          "Non-blocking QThread execution (AIWorker) keeping the UI responsive during web queries and file inspection.",
-          "Validated attachment reader supporting source code, Markdown, JSON, SQL, and PDFs (pypdf) up to 2 MB.",
-          "On-demand web lookup (duckduckgo-search), local Ollama support via environment variables, and offline static code diagnostics fallback."
+          "Dark PyQt5 desktop UI with sidebar session management backed by SQLite and non-blocking QThread execution (AIWorker).",
+          "Decoupled AIEngineClient supporting OpenAI-compatible endpoints, local Ollama, strict local-only mode (BIA4VS_LOCAL_ONLY), configurable timeouts, and safe cancellation.",
+          "Built-in secret scanner (scan_sensitive_content) that detects private keys, tokens, and hardcoded credentials to block outbound transmission to external APIs.",
+          "Validated attachment reader (source code, Markdown, JSON, SQL, PDF via pypdf up to 2 MB), on-demand web search, and offline static code diagnostics fallback.",
+          "Automated unittest suite covering HTTP 429/500 errors, timeouts, privacy rules, attachments, and SQLite storage running on Python 3.11 and 3.12 in GitHub Actions CI."
         ],
         "inProgress": [
-          "Stabilizing external search parsing and expanding language-specific static checks.",
-          "Adding automated tests for attachment validation and SQLite storage."
+          "Expanding offline static analysis rules per language (Java, Python, SQL, and C).",
+          "Adding Markdown export for conversations and code review reports."
         ],
         "nextSteps": [
-          "Markdown export for conversations and code review summaries.",
-          "In-app settings dialog for selecting local/remote model endpoints."
+          "In-app settings dialog for switching providers, models, and local-only mode.",
+          "Optional lightweight repository indexing respecting .gitignore."
         ],
-        "limitations": "In active development; file inspection is strictly passive and never executes or modifies user files automatically."
+        "limitations": "File inspection is strictly passive and never executes or alters user files automatically."
       },
       "demoUrl": null
     },
@@ -234,10 +238,10 @@
       "name": "Gestão de Frotas e Telemetria — Aplicação Desktop",
       "name_en": "Fleet Management & Telemetry — Desktop Application",
       "category": "desktop",
-      "status": "specification",
+      "status": "development",
       "technologies": ["Java", "JavaFX", "PostgreSQL", "JDBC"],
       "repository": "https://github.com/VictorEduardo-coder/Gestao-de-Frotas",
-      "image": "./public/images/projects/gestao-frotas.webp",
+      "image": "./public/images/projects/gestao-frotas-arquitetura.webp",
       "gallery": [
         {
           "src": "./public/images/projects/gestao-frotas-arquitetura.webp",
@@ -275,7 +279,7 @@
           "captionEn": "JavaFX Desktop Login screen with account authentication and registration"
         }
       ],
-      "demo": null,
+      "demo": "telemetry-monitor",
       "pt": {
         "summary": "Aplicação desktop em Java 17+, JavaFX e PostgreSQL (JDBC) para gestão de veículos, vínculo de sensores de telemetria e controle de acesso por perfil (RBAC).",
         "problem": "Gerenciar o ciclo de vida de uma frota, associando sensores de telemetria, rastreamento GPS e níveis de permissão em painéis dedicados.",
@@ -294,7 +298,7 @@
           "Criar suíte de testes unitários com JUnit 5 para RBAC e camada repository/.",
           "Adicionar simulador configurável de leitura contínua de telemetria."
         ],
-        "limitations": "Protótipo acadêmico em evolução: senhas de demonstração e token secundário ('000000') ainda estão em fase de substituição por BCrypt e MFA real."
+        "limitations": "Protótipo acadêmico em evolução: senhas de demonstração e token secundário ('000000') estão em fase de substituição por BCrypt e MFA real."
       },
       "en": {
         "summary": "Desktop application built with Java 17+, JavaFX, and PostgreSQL (JDBC) for fleet management, telemetry sensor binding, and role-based access control (RBAC).",

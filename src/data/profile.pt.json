@@ -3,17 +3,17 @@
   "brand": "VICTOR.EXE",
   "name": "Victor Eduardo",
   "fullName": "Victor Eduardo Almeida dos Santos",
-  "title": "Estudante de Engenharia da Computação | Backend & Engenharia de Software",
+  "title": "Engenharia da Computação (UFG) | Backend, Automação & Engenharia de Software",
   "institution": "Universidade Federal de Goiás (UFG)",
   "degree": "Bacharelado em Engenharia da Computação",
   "period": "Agosto/2025 – Dezembro/2030 (previsão de conclusão)",
-  "location": "Aparecida de Goiânia — GO, Brasil",
-  "goal": "Oportunidade de estágio em Desenvolvimento de Software",
+  "location": "Aparecida de Goiânia — GO, Brasil (Remoto · Goiânia e Região)",
+  "goal": "Estágio em Desenvolvimento de Software (Remoto ou Goiânia/GO)",
   "availability": "Disponibilidade de até 6 horas por dia",
-  "availabilityBadge": "Disponível para estágio (até 6h/dia)",
+  "availabilityBadge": "Disponível para estágio · Remoto ou Goiânia (até 6h/dia)",
   "profileImage": "./public/images/profile.webp",
   "profileImageAlt": "Foto de perfil de Victor Eduardo",
-  "summary": "Graduando em Engenharia da Computação na UFG, com foco em desenvolvimento backend (Java e Spring Boot), modelagem relacional SQL, automação de rotinas (Discord JDA e IMAP) e ferramentas desktop em Python e JavaFX. Busco estágio em Desenvolvimento de Software para aplicar essa base prática em projetos de produção e aprender com um time de engenharia.",
+  "summary": "Graduando em Engenharia da Computação na UFG, com foco em desenvolvimento backend (Java 21 e Spring Boot), segurança de aplicações, modelagem relacional SQL, automação e ferramentas com IA em Python. Projetos públicos com testes automatizados (JUnit 5 / unittest) e pipelines CI no GitHub Actions. Busco estágio remoto ou em Goiânia/GO para contribuir em código de produção junto a um time de engenharia.",
   "transparencyPrinciple": "Princípio central: demonstrar competência com transparência. Funcionalidades planejadas não são apresentadas como implementadas, nem simulações locais como serviços reais.",
   "contacts": {
     "email": "victoreduardo.alm@gmail.com",
@@ -47,9 +47,9 @@
     "terminalHeader": "status_profissional.sh",
     "terminalLines": [
       "curso: Engenharia da Computacao @ UFG",
-      "foco: Backend, Engenharia de Software, Automacao & Integracao",
-      "stack_principal: Java, Spring Boot, SQL, Python, C (C11), Docker",
-      "objetivo: Estagio em Desenvolvimento de Software (ate 6h/dia)"
+      "foco: Backend, Automacao, Seguranca & Engenharia Assistida por IA",
+      "stack_principal: Java 21, Spring Boot, Python, SQL, Docker, JUnit 5, CI/CD",
+      "objetivo: Estagio em Engenharia de Software (Remoto ou Goiania, ate 6h/dia)"
     ]
   },
   "education": [
@@ -66,18 +66,19 @@
       "organization": "Santa Casa de Misericórdia de Goiânia (via CESAM)",
       "period": "Março/2024 – Agosto/2025",
       "highlights": [
-        "Suporte técnico e resolução de problemas do dia a dia nas áreas de TI e administrativa.",
-        "Atuação em diferentes setores, desenvolvendo comunicação clara e trabalho em equipe."
+        "Suporte técnico cotidiano a colaboradores internos e resolução prática de incidentes de sistemas e equipamentos.",
+        "Organização de rotinas administrativas e integração de fluxos entre setores, desenvolvendo comunicação clara e trabalho em equipe."
       ]
     }
   ],
   "skills": {
     "backendCloud": {
-      "title": "Backend, Dados & Nuvem",
+      "title": "Backend, Dados & Qualidade",
       "items": [
         "Java 21",
         "Spring Boot",
         "Spring Security",
+        "API REST",
         "Python",
         "C (C11)",
         "SQL",
@@ -87,12 +88,16 @@
         "H2",
         "JDBC",
         "Javalin",
-        "Docker"
+        "JUnit 5 & MockMvc",
+        "Docker",
+        "GitHub Actions (CI/CD)"
       ]
     },
     "mobileDesktopTools": {
-      "title": "Desktop, Automação e Ferramentas",
+      "title": "Automação, IA & Ferramentas",
       "items": [
+        "LLMs / Ollama",
+        "Engenharia Assistida por IA",
         "JavaFX",
         "PyQt5",
         "Discord JDA",
@@ -105,14 +110,15 @@
       ]
     },
     "fundamentals": {
-      "title": "Fundamentos de Computação",
+      "title": "Fundamentos & Segurança",
       "items": [
         "Algoritmos e Estruturas de Dados",
         "Heurísticas de Priorização",
-        "Álgebra Linear",
         "Programação Orientada a Objetos",
         "Modelagem Relacional",
-        "Segurança de Aplicações"
+        "Segurança (BCrypt, CSRF, anti-IDOR, AES-GCM)",
+        "Testes Automatizados",
+        "Álgebra Linear"
       ]
     },
     "languages": {
@@ -126,36 +132,36 @@
     }
   },
   "aiUsage": {
-    "title": "Uso Crítico de Ferramentas de IA",
-    "text": "Ferramentas de IA são usadas como apoio para revisão de arquitetura, diagnóstico de vulnerabilidades e documentação técnica, sempre com validação manual, testes e entendimento direto do código antes de integrar qualquer mudança."
+    "title": "Engenharia Assistida por IA & Fluxo Produtivo",
+    "text": "Uso ferramentas e agentes de IA (como GitHub Copilot, LLMs locais via Ollama e prototipação rápida orientada a especificações) para acelerar implementação, auditoria de segurança (anti-IDOR, CSRF, detecção de segredos) e geração de testes automatizados — sempre com validação crítica, suítes de CI e domínio direto do código entregue."
   },
   "engineering": {
     "title": "Perfil de Engenharia & Decisões Técnicas",
-    "subtitle": "Como organizo o raciocínio técnico, estruturo sistemas e avalio trade-offs em projetos reais.",
+    "subtitle": "Como organizo o raciocínio técnico, estruturo sistemas seguros e valido entregas com testes automatizados.",
     "topics": [
       {
         "title": "Desenvolvimento Backend & Arquitetura em Camadas",
-        "concept": "Separação de responsabilidades entre controladores/views, regras de domínio e persistência de dados (DAO/Repositórios).",
+        "concept": "Separação de responsabilidades entre controladores/views, serviços de domínio/autorização e persistência de dados.",
         "whereUsed": "SystemRPG (ZERO RPG) e Gestão de Frotas e Telemetria.",
-        "problemSolved": "Evita acoplamento direto entre interfaces web/JavaFX e consultas SQL no banco de dados.",
-        "decision": "Isolar regras de domínio em serviços dedicados e parametrizar consultas SQL e variáveis de ambiente.",
-        "learning": "Evolução contínua na padronização de tratamento de exceções, transações e empacotamento com Maven e Docker."
+        "problemSolved": "Evita acoplamento direto entre interfaces web/JavaFX e consultas SQL, facilitando manutenção e testes isolados.",
+        "decision": "Centralizar regras de posse no AutorizacaoService (SystemRPG), parametrizar consultas JDBC e carregar credenciais exclusivamente por variáveis de ambiente.",
+        "learning": "Padronização de empacotamento multi-stage com Maven/Docker e desacoplamento incremental com DTOs e testes em H2."
       },
       {
-        "title": "Segurança, Motor Econômico & Modelagem Relacional",
-        "concept": "Autenticação segura, modelagem SQL com integridade referencial e comunicação em tempo real.",
-        "whereUsed": "SystemRPG (Java 21, Spring Boot, Spring Security, MySQL / TiDB Cloud, WebSockets).",
-        "problemSolved": "Automatização de fichas, rolagens ao vivo, controle de Realidade, nível de corrupção e fluxo de moedas (R$, G e TR) com separação entre Mestre e Jogador.",
-        "decision": "Proteger senhas com BCrypt, isolar credenciais em variáveis de ambiente e validar operações no backend antes de persistir.",
-        "learning": "Boas práticas de higiene de repositório, variáveis de ambiente no application.properties e containerização multi-stage."
+        "title": "Segurança de Aplicações & Testes em CI/CD",
+        "concept": "Hardening de autenticação/autorização, proteção contra IDOR/CSRF, criptografia autenticada e validação contínua.",
+        "whereUsed": "SystemRPG (18/18 testes JUnit 5 + MockMvc), Bot Acadêmico (12/12 testes HTTP + AES-256-GCM) e BIA4vs (scanner de segredos + unittest).",
+        "problemSolved": "Elimina acessos indevidos entre usuários, vazamento de credenciais em prompts/repositórios e regressões silenciosas.",
+        "decision": "Adotar Spring Security com BCrypt/CSRF/anti-IDOR no SystemRPG, BCrypt + rate limit (429) + TTL + CORS restrito no Bot Acadêmico e scanner de segredos no BIA4vs.",
+        "learning": "Transformar auditorias de segurança em testes automatizados executados a cada push via GitHub Actions."
       },
       {
-        "title": "Processamento Assíncrono & Integração entre Sistemas",
-        "concept": "Workers em segundo plano, leitura de protocolos externos e criptografia de credenciais de usuário.",
-        "whereUsed": "Bot Acadêmico (Java, Discord JDA, Javalin, IMAP, AES-GCM) e BIA4vs (Python, PyQt5, QThread).",
-        "problemSolved": "Leitura periódica de e-mails acadêmicos via IMAP, envio de lembretes agendados no Discord e leitura de múltiplos arquivos de código sem travar a interface desktop.",
-        "decision": "Desacoplar tarefas de rede e I/O em schedulers/threads dedicadas e proteger credenciais IMAP com criptografia AES-GCM antes de gravar no banco.",
-        "learning": "Alternância transparente entre PostgreSQL em produção e H2 local no Bot Acadêmico, e fallback de análise estática offline no BIA4vs."
+        "title": "Processamento Assíncrono & Integração com IA",
+        "concept": "Workers em segundo plano, leitura de protocolos externos e desacoplamento de clientes LLM com fallback offline.",
+        "whereUsed": "Bot Acadêmico (Java, Discord JDA, Javalin, IMAP) e BIA4vs (Python, PyQt5, QThread, AIEngineClient / Ollama).",
+        "problemSolved": "Monitoramento periódico de e-mails acadêmicos via IMAP, lembretes no Discord e análise de código/PDF sem travar a interface desktop.",
+        "decision": "Desacoplar o AIEngineClient da interface PyQt5 com suporte a modo somente local (BIA4VS_LOCAL_ONLY), timeout e cancelamento seguro.",
+        "learning": "Resiliência a falhas externas (HTTP 429/500, timeout, DNS) comprovada por testes automatizados e fallback offline."
       },
       {
         "title": "Algoritmos, Estruturas de Dados & Alocação de Rotina",
@@ -169,14 +175,14 @@
   },
   "githubSection": {
     "title": "GitHub & Repositórios",
-    "subtitle": "Acesso direto ao código-fonte e estado real dos projetos públicos. Conteúdo estático de reserva garantido caso a API do GitHub esteja indisponível.",
+    "subtitle": "Acesso direto ao código-fonte, pipelines de CI e estado real dos projetos públicos. Catálogo estático garantido mesmo offline.",
     "profileLabel": "Perfil oficial:",
     "loadLiveButton": "Consultar atualização na API pública do GitHub",
     "fallbackNotice": "Exibindo catálogo verificado localmente. A navegação não depende de requisições externas."
   },
   "contactSection": {
     "title": "Contato Profissional & Currículo",
-    "subtitle": "Aberto a oportunidades de estágio em Desenvolvimento de Software (até 6h/dia) e conversas técnicas sobre backend, automação e arquitetura.",
+    "subtitle": "Aberto a oportunidades de estágio remoto ou em Goiânia/GO (até 6h/dia) em Engenharia de Software, Backend, Automação e Desenvolvimento com IA.",
     "ctaEmail": "Enviar E-mail",
     "copyEmail": "Copiar E-mail",
     "copiedFeedback": "E-mail copiado para a área de transferência!"

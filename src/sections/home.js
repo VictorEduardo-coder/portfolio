@@ -19,28 +19,28 @@ export function renderHomeSection(profile) {
   const pillars = isEn
     ? [
         {
-          num: "01 // BACKEND",
-          title: "Backend & Persistence",
+          num: "01 // BACKEND & SEC",
+          title: "Backend, Security & CI",
           items: [
-            "Java 21, Spring Boot & Spring Security applied in SystemRPG.",
-            "REST APIs, WebSockets, and relational SQL modeling (MySQL / TiDB, PostgreSQL, SQLite, H2).",
-            "JDBC, Docker multi-stage builds, and cloud deployment configuration (Render)."
+            "Java 21, Spring Boot & Spring Security (BCrypt, CSRF, anti-IDOR) in SystemRPG.",
+            "REST APIs (Spring/Javalin), WebSockets, and SQL (MySQL/TiDB, PostgreSQL, SQLite, H2).",
+            "Automated tests (JUnit 5, MockMvc, unittest) with GitHub Actions CI & Docker."
           ]
         },
         {
-          num: "02 // AUTOMATION",
-          title: "Automation & Integrations",
+          num: "02 // AUTOMATION & AI",
+          title: "Automation & AI Tooling",
           items: [
-            "Discord bot (JDA) + Javalin REST API + IMAP polling in Academic Bot.",
-            "PriorityQueue study scheduling heuristic and AES-GCM credential encryption.",
-            "Python desktop tooling (PyQt5 + QThread + SQLite) in BIA4vs."
+            "Discord bot (JDA), hardened Javalin API, IMAP polling & AES-256-GCM in Academic Bot.",
+            "Python desktop AI assistant (BIA4vs) with Ollama/OpenAI APIs and outbound secret scanner.",
+            "AI-assisted engineering workflow focused on rapid prototyping, audits, and verified tests."
           ]
         },
         {
-          num: "03 // DESKTOP & CORE",
+          num: "03 // SYSTEMS & CORE",
           title: "Desktop & CS Foundations",
           items: [
-            "JavaFX desktop interfaces and simulated telemetry in Fleet Management.",
+            "JavaFX desktop interfaces, RBAC, and PostgreSQL JDBC in Fleet Management.",
             "Algorithms, data structures, linear algebra, and C (C11) fundamentals.",
             "Git, GitHub Actions, Linux environment, and Apache Maven."
           ]
@@ -48,28 +48,28 @@ export function renderHomeSection(profile) {
       ]
     : [
         {
-          num: "01 // BACKEND",
-          title: "Backend & Persistência",
+          num: "01 // BACKEND & SEG",
+          title: "Backend, Segurança & CI",
           items: [
-            "Java 21, Spring Boot e Spring Security aplicados no SystemRPG.",
-            "APIs REST, WebSockets e modelagem SQL (MySQL / TiDB, PostgreSQL, SQLite, H2).",
-            "JDBC, containerização com Docker multi-stage e deploy em nuvem (Render)."
+            "Java 21, Spring Boot e Spring Security (BCrypt, CSRF, anti-IDOR) no SystemRPG.",
+            "APIs REST (Spring/Javalin), WebSockets e SQL (MySQL/TiDB, PostgreSQL, SQLite, H2).",
+            "Testes automatizados (JUnit 5, MockMvc, unittest) com GitHub Actions CI e Docker."
           ]
         },
         {
-          num: "02 // AUTOMAÇÃO",
-          title: "Automação & Integrações",
+          num: "02 // AUTOMAÇÃO & IA",
+          title: "Automação & Ferramentas IA",
           items: [
-            "Bot Discord (JDA), API HTTP (Javalin) e leitura IMAP no Bot Acadêmico.",
-            "Alocação heurística de estudos via PriorityQueue e criptografia AES-GCM.",
-            "Assistente desktop modular em Python (PyQt5 + QThread + SQLite) no BIA4vs."
+            "Bot Discord (JDA), API Javalin segura, IMAP e AES-256-GCM no Bot Acadêmico.",
+            "Assistente desktop em Python (BIA4vs) com LLMs/Ollama e scanner de segredos.",
+            "Engenharia assistida por IA para prototipação ágil, revisão de segurança e testes."
           ]
         },
         {
-          num: "03 // DESKTOP & BASE",
+          num: "03 // SISTEMAS & BASE",
           title: "Desktop & Fundamentos",
           items: [
-            "Interfaces desktop em JavaFX e telemetria simulada no Gestão de Frotas.",
+            "Interfaces desktop em JavaFX, RBAC e PostgreSQL JDBC no Gestão de Frotas.",
             "Algoritmos, estruturas de dados, álgebra linear e fundamentos em C (C11).",
             "Git, GitHub Actions, ambiente Linux e Apache Maven."
           ]
@@ -124,12 +124,12 @@ export function renderHomeSection(profile) {
                 <span class="hero-stat-lbl">${isEn ? "Computer Engineering" : "Eng. da Computação"}</span>
               </div>
               <div class="hero-stat-item">
-                <div class="hero-stat-val"><span>4</span> ${isEn ? "Projects" : "Projetos"}</div>
-                <span class="hero-stat-lbl">${isEn ? "Featured Systems" : "Sistemas em Destaque"}</span>
+                <div class="hero-stat-val"><span>30+</span> ${isEn ? "CI Tests" : "Testes CI"}</div>
+                <span class="hero-stat-lbl">${isEn ? "JUnit 5, MockMvc & Py" : "JUnit 5, MockMvc e Py"}</span>
               </div>
               <div class="hero-stat-item">
                 <div class="hero-stat-val"><span>6h</span>/dia</div>
-                <span class="hero-stat-lbl">${isEn ? "Internship Availability" : "Disponibilidade Estágio"}</span>
+                <span class="hero-stat-lbl">${isEn ? "Remote or Goiânia/GO" : "Remoto ou Goiânia/GO"}</span>
               </div>
             </div>
           </div>

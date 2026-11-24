@@ -26,10 +26,10 @@ const FLAGSHIP_LAYERS = {
     },
     {
       id: "L3",
-      pill: "L3: Interfaces & Segurança",
-      title: "CAMADA 03 // VIEWS WEB/DESKTOP, SEGURANÇA & CONTAINERIZAÇÃO",
-      desc: "Autenticação com Spring Security e hash BCrypt, criptografia AES-GCM para credenciais IMAP, interfaces web em Thymeleaf, clientes desktop em JavaFX e PyQt5, além de builds multi-stage com Docker.",
-      tags: ["Spring Security & BCrypt", "AES-GCM", "JavaFX & PyQt5", "Docker"]
+      pill: "L3: Segurança, UI & CI/CD",
+      title: "CAMADA 03 // HARDENING DE SEGURANÇA, INTERFACES & TESTES EM CI",
+      desc: "Spring Security (BCrypt, CSRF e anti-IDOR), criptografia AES-256-GCM e rate limit no Bot Acadêmico, scanner de segredos no BIA4vs, clientes Thymeleaf/JavaFX/PyQt5, Docker multi-stage e pipelines GitHub Actions com 30+ testes automatizados.",
+      tags: ["Spring Security & anti-IDOR", "AES-256-GCM", "JUnit 5 / unittest CI", "Docker"]
     }
   ],
   "en": [
@@ -56,10 +56,10 @@ const FLAGSHIP_LAYERS = {
     },
     {
       id: "L3",
-      pill: "L3: Interfaces & Security",
-      title: "LAYER 03 // WEB/DESKTOP UI, SECURITY & CONTAINERIZATION",
-      desc: "Spring Security authentication with BCrypt hashing, AES-GCM encryption for IMAP credentials, Thymeleaf web templates, JavaFX & PyQt5 desktop interfaces, and multi-stage Docker builds.",
-      tags: ["Spring Security & BCrypt", "AES-GCM", "JavaFX & PyQt5", "Docker"]
+      pill: "L3: Security, UI & CI/CD",
+      title: "LAYER 03 // SECURITY HARDENING, UI & AUTOMATED CI TESTS",
+      desc: "Spring Security (BCrypt, CSRF, anti-IDOR), AES-256-GCM and rate limiting in Academic Bot, outbound secret scanning in BIA4vs, Thymeleaf/JavaFX/PyQt5 clients, multi-stage Docker builds, and GitHub Actions CI with 30+ automated tests.",
+      tags: ["Spring Security & anti-IDOR", "AES-256-GCM", "JUnit 5 / unittest CI", "Docker"]
     }
   ]
 };

@@ -6,13 +6,13 @@ const AGENT_DEFS = [
   { id: "grid-align", color: "#A855F7" },
   { id: "sql-schema", color: "#06B6D4" },
   { id: "jvm-thread", color: "#EC4899" },
-  { id: "compose-ui", color: "#84CC16" },
+  { id: "ci-runner", color: "#84CC16" },
   { id: "vec-math", color: "#60A5FA" },
   { id: "sec-guard", color: "#F97316" }
 ];
 
 let swarmState = {
-  enabled: true,
+  enabled: false,
   rafId: null,
   observer: null,
   agents: [],

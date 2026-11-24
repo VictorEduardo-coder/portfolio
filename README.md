@@ -4,13 +4,13 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/victoreduardo-coder/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/VictorEduardo-coder)
 
-Portfólio interativo e bilíngue (PT/EN) de **Victor Eduardo Almeida dos Santos**, graduando em **Engenharia da Computação na Universidade Federal de Goiás (UFG)**, com foco em **Desenvolvimento Backend, Engenharia de Software, Automação e Modelagem Relacional**.
+Portfólio interativo e bilíngue (PT/EN) de **Victor Eduardo Almeida dos Santos**, graduando em **Engenharia da Computação na Universidade Federal de Goiás (UFG)**, com foco em **Desenvolvimento Backend, Segurança de Aplicações, Automação e Engenharia Assistida por IA**.
 
 ---
 
 ## Sobre o Projeto
 
-Construído com **HTML semântico, CSS modular e JavaScript puro (ES Modules)** — sem dependências de runtime — o portfólio reúne meus principais sistemas, capturas reais das aplicações, decisões de arquitetura, currículo integrado e um **Tech Lab** interativo que roda inteiramente no navegador.
+Construído com **HTML semântico, CSS modular e JavaScript puro (ES Modules)** — sem dependências de runtime — o portfólio reúne os principais sistemas públicos (com suítes de testes automatizados e CI no GitHub Actions), capturas reais das aplicações, decisões de arquitetura, currículo atualizado em PDF e um **Tech Lab** interativo que executa inteiramente no navegador.
 
 <p align="center">
   <img src="./public/images/projects/systemrpg-status.webp" alt="Prévia SystemRPG no Portfólio" width="48%" />
@@ -21,14 +21,14 @@ Construído com **HTML semântico, CSS modular e JavaScript puro (ES Modules)** 
 
 ## Principais Recursos
 
-- **Apresentação & Currículo Integrado:** Trajetória na UFG, experiência prévia em TI/Administrativo e acesso direto ao currículo em PDF.
-- **Matriz de Projetos & Inspetor de Arquitetura:** Filtros por área, tecnologia e status, galeria interativa com telas reais e detalhamento transparente de escopo.
+- **Apresentação & Currículo Atualizado:** Trajetória na UFG, experiência prévia em TI/Administrativo e currículo público em PDF sem exposição de dados sensíveis.
+- **Matriz de Projetos & Inspetor de Arquitetura:** Filtros por área, tecnologia e status, galeria interativa com telas reais, cobertura de segurança/CI e detalhamento transparente de escopo.
 - **Tech Lab (Simulações Interativas no Navegador):**
   - Simulador de API REST & validação de payloads JSON;
   - Laboratório passo a passo de Algoritmos e Estruturas de Dados (Mochila 0/1, QuickSort, Busca Binária/Linear, Pilha e Fila);
-  - Playground de código com exemplos em Java/Spring Boot, C11 e Python/SQLite.
-- **Bilíngue (PT-BR / EN) & Fallback Offline:** Carregamento via JSON com fallback embutido, garantindo funcionamento mesmo sem requisições externas.
-- **Testes Automatizados & CI/CD:** Validação automática de schema, imagens e algoritmos com `node` no GitHub Actions antes do deploy no **GitHub Pages**.
+  - Monitor de telemetria simulado e playground de código (Java/Spring Boot, C11 e Python/SQLite).
+- **Bilíngue (PT-BR / EN), Carregamento Direto & SEO:** Carregamento imediato (efeito de agentes opcional no cabeçalho), fallback offline sincronizado e metadados Open Graph / Twitter Card com card dedicado (`og-cover.png`).
+- **Testes Automatizados & CI/CD:** Validação automática de schema, imagens, metadados e algoritmos com `node` no GitHub Actions antes do deploy no **GitHub Pages**.
 
 ---
 
@@ -41,10 +41,11 @@ Construído com **HTML semântico, CSS modular e JavaScript puro (ES Modules)** 
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
 ### Stack Demonstrada nos Projetos e Tech Lab
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![C](https://img.shields.io/badge/C11-00599C?style=flat-square&logo=c&logoColor=white)
 
 ---
